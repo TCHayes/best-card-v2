@@ -3,11 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-const {Category} = require('./models');
+const {Category, Card} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
 
-const {Card} = require('./models')
 app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
