@@ -3,12 +3,25 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+const {Category} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
 
 mongoose.Promise = global.Promise;
 
-// API endpoints go here!
+app.get('/api/categories', (req, res) => {
+
+    Category
+        .find()
+        .exec()
+        .then(categories => {
+            res.json(categories);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({message: 'Internal server error'});
+        });
+});
 
 
 // Serve the built client

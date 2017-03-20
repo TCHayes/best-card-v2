@@ -16,6 +16,7 @@ const categorySchema = mongoose.Schema({
   "name": String
 });
 
+
 const Card = mongoose.model('Card', cardSchema);
 const Category = mongoose.model('Category', categorySchema);
 
