@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+const DATABASE_URL = process.env.DATABASE_URL ||
+                       global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
 
 mongoose.Promise = global.Promise;
 
@@ -22,9 +24,16 @@ app.get(/^(?!\/api(\/|$))/, (req, res) => {
 let server;
 function runServer(port=3001) {
     return new Promise((resolve, reject) => {
+      mongoose.connect(DATABASE_URL, err => {
+        if(err) {
+          return reject(err);
+        }
+        console.log('Db connected');
+
         server = app.listen(port, () => {
             resolve();
         }).on('error', reject);
+      });
     });
 }
 
