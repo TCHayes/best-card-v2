@@ -7,6 +7,9 @@ const {Category} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
 
+const {Card} = require('./models')
+app.use(bodyParser.json());
+
 mongoose.Promise = global.Promise;
 
 app.get('/api/categories', (req, res) => {
@@ -23,6 +26,18 @@ app.get('/api/categories', (req, res) => {
         });
 });
 
+app.get('/api/cards', (req, res) => {
+ Card
+   .find()
+   .exec()
+   .then(cards => {
+     res.json(cards);
+   })
+   .catch(err => {
+     console.error(err);
+     res.status(500).json({error: 'something went terribly wrong'});
+   });
+});
 
 // Serve the built client
 app.use(express.static(path.resolve(__dirname, '../client/build')));
