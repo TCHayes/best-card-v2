@@ -1,24 +1,46 @@
 import React from 'react';
-//import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import Card from './Card';
 import { Link } from 'react-router';
 
-export default function Recommendation (props) {
-  //props.params will be defined by the variable route '/:selection'
+function mapStateToProps(state, props) {
+   let bestPercent = 0;
+   let bestCards = [];
+   let selection = props.params.selection.toLowerCase();
+
+   state.cards.forEach(card => {
+     if (card.categories[selection] > bestPercent){
+       bestPercent = card.categories[selection];
+       bestCards = [card.name];
+     }
+     else if (card.categories[selection] === bestPercent){
+       bestCards.push(card.name);
+     }
+   });
+
+   return {
+     bestCards: bestCards,
+     bestPercent: bestPercent
+   }
+}
+
+export function Recommendation (props) {
+  //props.params is defined by the variable route '/:selection'
   const {selection} = props.params;
+  const {bestPercent} = props;
+  const cards = props.bestCards.map((card, index) => <Card key={index}
+                                                          name={card}
+                                                       percent={bestPercent} />)
 
-  //Hardcoded example below for testing
-  //const selection = 'restaurants';
-
-  //Back button below will need to trigger event to reset selection to empty string
-  // and render the category list component
   return (
     <div id='recommendation-container'>
       <div id='selection'>
         <h3>{selection.charAt(0).toUpperCase() + selection.slice(1)}</h3>
       </div>
-      <Card selection={selection}/>
+      {cards}
       <Link to="/" className='back-btn'>Back</Link>
     </div>
   )
 }
+
+export default connect(mapStateToProps)(Recommendation);
