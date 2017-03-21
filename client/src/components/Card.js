@@ -9,21 +9,21 @@ export default function Card (props) {
   //const bestCard;
 
   //Hardcoded example below for testing
-  const bestCard = {"name": "Chase Freedom Unlimited",
-     "categories": {
-     	"gas": 0.0225,
-     	"groceries": 0.0225,
-     	"restaurants": 0.0225,
-     	"travel": 0.0225,
-     	"other": 0.0225
-     }
+  const bestCard = {"name": "Amex Blue Cash Preferred",
+   "categories": {
+   	"gas": 0.03,
+   	"groceries": 0.06,
+   	"restaurants": 0.01,
+   	"travel": 0.01,
+   	"other": 0.01
+   }
   }
 
   return (
     <div id='card-recommendation'>
       <h2>{bestCard.name}</h2>
       <br></br>
-      <h3>{`${bestCard.categories[selection] * 100}% Back`}</h3>
+      <h3>{`${bestCard.categories[selection.toLowerCase()] * 100}% Back`}</h3>
     </div>
   )
 }

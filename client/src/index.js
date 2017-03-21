@@ -7,6 +7,7 @@ import App from './App';
 import './index.css';
 import reducer from './reducers';
 import CategoryList from './components/category-list';
+import Recommendation from './components/Recommendation';
 
 const store = createStore(reducer);
 
@@ -14,6 +15,7 @@ const routes =(
       <Router history={hashHistory}>
           <Route path='/' component={App}>
             <IndexRoute component={CategoryList} />
+            <Route path=':selection' component={Recommendation} />
           </Route>
       </Router>
 );

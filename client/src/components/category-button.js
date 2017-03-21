@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 //import { connect } from 'react-redux';
 
 export default function CategoryButton(props) {
@@ -10,7 +11,7 @@ export default function CategoryButton(props) {
 
     const categories = data.map((cat, index) => {
         const category = cat.charAt(0).toUpperCase() + cat.slice(1);
-        return <li key={index}><button>{category}</button></li>;
+        return <li key={index}><Link to={`/${category}`}>{category}</Link></li>;
     });
 
 

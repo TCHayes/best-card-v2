@@ -4,10 +4,10 @@ import Card from './Card';
 
 export default function Recommendation (props) {
   //props.params will be defined by the variable route '/:selection'
-  //const {selection} = props.params;
+  const {selection} = props.params;
 
   //Hardcoded example below for testing
-  const selection = 'restaurants';
+  //const selection = 'restaurants';
 
   //Back button below will need to trigger event to reset selection to empty string
   // and render the category list component
