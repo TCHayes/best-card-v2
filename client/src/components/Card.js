@@ -27,3 +27,10 @@ export default function Card (props) {
     </div>
   )
 }
+
+ function mapStateToProps(state, props) {
+   const bar = state.foo * 11 + state.baz;
+   return {
+     bestCard: bar
+   }
+ }
