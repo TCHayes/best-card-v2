@@ -1,15 +1,34 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/index';
 import CategoryButton from './category-button';
 
-export default function CategoryList() {
+export class CategoryList extends React.Component {
 
-    return (
-        <div className='CategoryList'>
+    componentDidMount() {
+        this.props.dispatch(actions.fetchCards());
 
-            {/* Page Title? */}
+    }
 
-            <h3>Select purchase category</h3>
-            <CategoryButton />
-        </div>
-    )
+    render() {
+
+        if (!this.props.cards.length) return <div/>
+        const categories = Object.keys(this.props.cards[0].categories);
+        console.log(categories);
+        return (
+            <div className='CategoryList'>
+
+                {/* Page Title? */}
+
+                <h3>Select purchase category</h3>
+                <CategoryButton categories={categories}/>
+            </div>
+        )
+    }
 }
+
+const mapStateToProps = (state, props) => ({
+    cards: state.cards
+});
+
+export default connect(mapStateToProps)(CategoryList)

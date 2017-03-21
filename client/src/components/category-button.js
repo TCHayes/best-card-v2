@@ -4,12 +4,7 @@ import { Link } from 'react-router';
 
 export default function CategoryButton(props) {
 
-    //Hard coded examples for testing
-    //data will come from async action calling /api/cards endpoint
-    const data = ['gas', 'groceries', 'restaurants', 'travel', 'other'];
-    //const data = Object.keys(props.data[0].categories)
-
-    const categories = data.map((cat, index) => {
+    const categories = props.categories.map((cat, index) => {
         const category = cat.charAt(0).toUpperCase() + cat.slice(1);
         return <li key={index}><Link to={`/${category}`}>{category}</Link></li>;
     });
