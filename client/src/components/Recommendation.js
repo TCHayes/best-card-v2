@@ -11,6 +11,9 @@ function mapStateToProps(state, props) {
    state.cards.forEach(card => {
      if (card.categories[selection] > bestPercent){
        bestPercent = card.categories[selection];
+       bestCards = [card.name];
+     }
+     if (card.categories[selection] === bestPercent){
        bestCards.push(card.name);
      }
    });
