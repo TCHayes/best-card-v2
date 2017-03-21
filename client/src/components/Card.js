@@ -1,34 +1,18 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
-function mapStateToProps(state, props) {
-   let bestPercent = -1;
-   let bestCard = '';
-   let selection = props.selection.toLowerCase();
+export default function Card (props) {
 
-   state.cards.forEach(card => {
-     if (card.categories[selection] > bestPercent){
-       bestPercent = card.categories[selection];
-       bestCard = card.name;
-     }
-   });
-
-   return {
-     bestCard: bestCard,
-     bestPercent: bestPercent
-   }
-}
-
-export function Card (props) {
-  //selection will be passed in from parent component Recommendation
+  //temp styling just to make individual cards easy to see
+  const divStyle = {
+    border: '1px solid black',
+    borderradius: '5px'
+  }
 
   return (
-    <div id='card-recommendation'>
-      <h2>{props.bestCard}</h2>
+    <div id='card-recommendation' style={divStyle}>
+      <h2>{props.name}</h2>
       <br></br>
-      <h3>{`${props.bestPercent * 100}% Back`}</h3>
+      <h3>{`${props.percent * 100}% Back`}</h3>
     </div>
   )
 }
-
-export default connect(mapStateToProps)(Card);
