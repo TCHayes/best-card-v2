@@ -13,7 +13,7 @@ function mapStateToProps(state, props) {
        bestPercent = card.categories[selection];
        bestCards = [card.name];
      }
-     if (card.categories[selection] === bestPercent){
+     else if (card.categories[selection] === bestPercent){
        bestCards.push(card.name);
      }
    });
