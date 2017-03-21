@@ -25,10 +25,12 @@ function mapStateToProps(state, props) {
 }
 
 export function Recommendation (props) {
-  //props.params will be defined by the variable route '/:selection'
+  //props.params is defined by the variable route '/:selection'
   const {selection} = props.params;
   const {bestPercent} = props;
-  const cards = props.bestCards.map((card, index) => <Card key={index} name={card} percent={bestPercent} />)
+  const cards = props.bestCards.map((card, index) => <Card key={index}
+                                                          name={card}
+                                                       percent={bestPercent} />)
 
   return (
     <div id='recommendation-container'>
