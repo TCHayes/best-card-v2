@@ -1,6 +1,7 @@
 import React from 'react';
 //import {connect} from 'react-redux';
 import Card from './Card';
+import { Link } from 'react-router';
 
 export default function Recommendation (props) {
   //props.params will be defined by the variable route '/:selection'
@@ -17,7 +18,7 @@ export default function Recommendation (props) {
         <h3>{selection.charAt(0).toUpperCase() + selection.slice(1)}</h3>
       </div>
       <Card selection={selection}/>
-      <button className='back-btn'>Back</button>
+      <Link to="/" className='back-btn'>Back</Link>
     </div>
   )
 }
