@@ -26,7 +26,7 @@ const initialState = {
       "_id": "58d032e5a8b6d65f52851129",
       "name": "Chase Freedom",
       "categories": {
-        "gas": 0.03,
+        "gas": 0.05,
         "groceries": 0.01,
         "restaurants": 0.01,
         "travel": 0.01,
