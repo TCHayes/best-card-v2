@@ -25,8 +25,10 @@ app.get('/api/cards', (req, res) => {
 });
 
 app.get('/api/users', (req, res) => {
+  //console.log(req.query.token);
+  // what if there is no token?
   User
-    .find({username: "Bob"})
+    .find({username: req.query.token})
     .exec()
     .then(userInfo => {
       res.json(userInfo[0]);
