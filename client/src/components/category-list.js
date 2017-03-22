@@ -15,12 +15,8 @@ export class CategoryList extends React.Component {
 
         if (!this.props.cards.length) return <div/>
         const categories = Object.keys(this.props.cards[0].categories);
-        console.log(categories);
         return (
             <div className='CategoryList'>
-
-                {/* Page Title? */}
-
                 <h3>Select purchase category</h3>
                 <CategoryButton categories={categories}/>
             </div>
