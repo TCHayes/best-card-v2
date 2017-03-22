@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Card from './Card';
 import { Link } from 'react-router';
+import '../../public/css/main.css'
 
 function mapStateToProps(state, props) {
    let bestPercent = 0;
@@ -38,7 +39,7 @@ export function Recommendation (props) {
         <h3>{selection.charAt(0).toUpperCase() + selection.slice(1)}</h3>
       </div>
       {cards}
-      <Link to="/" className='back-btn'>Back</Link>
+      <Link to="/" ><button className='back-btn'>Back</button></Link>
     </div>
   )
 }

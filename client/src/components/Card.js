@@ -1,18 +1,14 @@
 import React from 'react';
+import '../../public/css/main.css'
 
 export default function Card (props) {
 
-  //temp styling just to make individual cards easy to see
-  const divStyle = {
-    border: '1px solid black',
-    borderradius: '5px'
-  }
-
   return (
-    <div id='card-recommendation' style={divStyle}>
-      <h2>{props.name}</h2>
-      <br></br>
-      <h3>{`${props.percent * 100}% Back`}</h3>
+    <div className='btn results-btn'>
+      <div className='card-text'>
+        {props.name}<br />
+        {`${props.percent * 100}% Back`}
+      </div>
     </div>
   )
 }

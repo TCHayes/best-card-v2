@@ -1,0 +1,67 @@
+/*
+Color palette #03 from: https://designschool.canva.com/blog/brand-color-palette/
+EDFAFD
+AED9DA
+3DDAD7
+2A93D5
+135589
+*/
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.btn {
+  border: 2px solid #2A93D5;
+  border-radius: 5px;
+  margin: 10px auto;
+  width: 95%;
+  height: 90px;
+  background-color: #EDFAFD;
+  font-size: 2em;
+  text-decoration: none;
+  color: #135589;
+}
+
+.results-btn {
+  height: 150px;
+}
+
+.back-btn {
+  margin-top: 10px;
+  border: 2px solid #2A93D5;
+  border-radius: 5px;
+  width: 80%;
+  height: 30px;
+  background-color: #EDFAFD;
+  font-size: 1em;
+  text-decoration: none;
+  color: #135589;
+}
+
+.card-text {
+  padding: 15px;
+}
+
+/*This styling below applies only to screens with more than 683px:*/
+@media screen and (min-width: 400px) {
+  .CategoryList{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+  }
+
+  .btn{
+    width: 320px;
+    height: 100px;
+  }
+
+  .btn:hover{
+    box-shadow: 6px 5px 30px #505050;
+  }
+
+  .back-btn:hover{
+    box-shadow: 6px 5px 30px #505050;
+  }
+}
