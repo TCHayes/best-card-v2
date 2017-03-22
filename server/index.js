@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const {Category, Card} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
-                       global.DATABASE_URL || 'mongodb://bc-test:bctestpw@ds137340.mlab.com:37340/bestcard-app';
+                       global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
 
 app.use(bodyParser.json());
 
