@@ -3,27 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-const {Category, Card} = require('./models');
+const {Card, User} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
 
 app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
-
-app.get('/api/categories', (req, res) => {
-
-    Category
-        .find()
-        .exec()
-        .then(categories => {
-            res.json(categories);
-        })
-        .catch(err => {
-            console.error(err);
-            res.status(500).json({message: 'Internal server error'});
-        });
-});
 
 app.get('/api/cards', (req, res) => {
  Card

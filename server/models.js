@@ -12,12 +12,18 @@ const cardSchema = mongoose.Schema({
      }
 });
 
-const categorySchema = mongoose.Schema({
-  "name": String
-});
-
+const userSchema = mongoose.Schema({
+  username: {type:String, required:true},
+  firstName: {type:String, required:true},
+  lastName: {type:String, required:true},
+  password: {type:String, required:true},
+  cards: [{
+    name: String,
+    categories: Object
+  }]
+})
 
 const Card = mongoose.model('Card', cardSchema);
-const Category = mongoose.model('Category', categorySchema);
+const User = mongoose.model('User', userSchema);
 
-module.exports = {Card, Category};
+module.exports = {Card, User};
