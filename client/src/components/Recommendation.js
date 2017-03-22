@@ -9,7 +9,7 @@ function mapStateToProps(state, props) {
    let bestCards = [];
    let selection = props.params.selection.toLowerCase();
 
-   state.cards.forEach(card => {
+   state.userCards.forEach(card => {
      if (card.categories[selection] > bestPercent){
        bestPercent = card.categories[selection];
        bestCards = [card.name];

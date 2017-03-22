@@ -7,7 +7,7 @@ import '../../public/css/main.css'
 export class CategoryList extends React.Component {
 
     componentDidMount() {
-        this.props.dispatch(actions.fetchCards());
+        this.props.dispatch(actions.fetchUser());
 
     }
 
@@ -25,7 +25,7 @@ export class CategoryList extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    cards: state.cards
+    cards: state.userCards
 });
 
 export default connect(mapStateToProps)(CategoryList)
