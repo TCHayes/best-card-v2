@@ -24,6 +24,19 @@ app.get('/api/cards', (req, res) => {
    });
 });
 
+app.get('/api/users', (req, res) => {
+  User
+    .find({username: "Bob"})
+    .exec()
+    .then(userInfo => {
+      res.json(userInfo[0]);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: 'something went terribly wrong'});
+    });
+});
+
 // Serve the built client
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
