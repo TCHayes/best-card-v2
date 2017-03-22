@@ -1,3 +1,4 @@
+import cookie from 'react-cookie'
 
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
 export const fetchUserSuccess = (data) => ({
@@ -13,7 +14,7 @@ export const fetchUserFailure = (error) => ({
 
 export const fetchUser = () => dispatch => {
 
-    return fetch('/api/users').then(response => {
+    return fetch(`/api/users?token=${cookie.load('token')}`).then(response => {
         if (!response.ok) {
             throw new Error(response.statusText);
         }
