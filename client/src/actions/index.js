@@ -1,4 +1,4 @@
-import cookie from 'react-cookie'
+import cookie from 'react-cookie';
 
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
 export const fetchUserSuccess = (data) => ({
