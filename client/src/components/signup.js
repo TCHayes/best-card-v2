@@ -11,8 +11,8 @@ export default function Signup (props) {
         <input type='text' id="firstName"></input>
         <label htmlFor="lastName">Last Name:</label>
         <input type='text' id="lastName"></input>
-        <label htmlFor="userName">Username:</label>
-        <input type='text' id="userName"></input>
+        <label htmlFor="username">Username:</label>
+        <input type='text' id="username"></input>
         <label htmlFor="password">Password:</label>
         <input type='text' id="password"></input>
         <button type='submit' className='btn'>Submit</button>
@@ -20,3 +20,11 @@ export default function Signup (props) {
     </div>
   )
 }
+
+
+{/* <form onSubmit={this.props.dispatch(actions.addUser(
+  {firstName: document.getElementById("firstName").value,
+  lastName: document.getElementById("lastName").value,
+  username: document.getElementById("username").value,
+  password: document.getElementById("password").value}
+))}> */}
