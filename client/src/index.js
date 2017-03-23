@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
@@ -19,7 +19,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 let routes;
 if (cookie.load('token')){
   routes =(
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
             <Route path='/' component={App}>
               <IndexRoute component={CategoryList} />
               <Route path=':selection' component={Recommendation} />
@@ -28,7 +28,7 @@ if (cookie.load('token')){
   );
 } else {
   routes =(
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Welcome} />
         <Route path='/signup' component={Signup} />
