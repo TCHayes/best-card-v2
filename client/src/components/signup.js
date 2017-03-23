@@ -2,15 +2,19 @@ import React from 'react';
 import '../../public/css/main.css'
 import { Link } from 'react-router';
 
-export default function Welcome (props) {
+export default function Signup (props) {
 
   return (
-    <div className=''>
+    <div className='signup-page'>
       <form>
-        First Name: <input type='text' name="firstName"></input>
-        Last Name: <input type='text' name="lastName"></input>
-        Username: <input type='text' name="userName"></input>
-        Password: <input type='text' name="password"></input>
+        <label htmlFor="firstName">First Name:</label>
+        <input type='text' id="firstName"></input>
+        <label htmlFor="lastName">Last Name:</label>
+        <input type='text' id="lastName"></input>
+        <label htmlFor="userName">Username:</label>
+        <input type='text' id="userName"></input>
+        <label htmlFor="password">Password:</label>
+        <input type='text' id="password"></input>
         <button type='submit' className='btn'>Submit</button>
       </form>
     </div>

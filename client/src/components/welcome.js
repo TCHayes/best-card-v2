@@ -6,8 +6,8 @@ export default function Welcome (props) {
 
   return (
     <div className=''>
-      <Link to="/" ><button className='btn'>Login</button></Link>
-      <Link to="/" ><button className='btn'>Sign Up</button></Link>
+      <Link to="/login" ><button className='btn'>Login</button></Link>
+      <Link to="/signup" ><button className='btn'>Sign Up</button></Link>
     </div>
   )
 }

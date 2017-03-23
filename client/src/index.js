@@ -10,11 +10,13 @@ import reducer from './reducers';
 import CategoryList from './components/category-list';
 import Recommendation from './components/Recommendation';
 import Welcome from './components/welcome';
+import Signup from './components/signup';
+import Login from './components/login';
 import cookie from 'react-cookie';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-const routes = '';
+let routes;
 if (cookie.load('token')){
   routes =(
         <Router history={hashHistory}>
@@ -29,6 +31,8 @@ if (cookie.load('token')){
     <Router history={hashHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Welcome} />
+        <Route path='/signup' component={Signup} />
+        <Route path='/login' component={Login} />
       </Route>
     </Router>
   );
