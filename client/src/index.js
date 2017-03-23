@@ -16,28 +16,23 @@ import cookie from 'react-cookie';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-let routes;
-if (cookie.load('token')){
-  routes =(
-        <Router history={browserHistory}>
-            <Route path='/' component={App}>
-              <IndexRoute component={CategoryList} />
-              <Route path=':selection' component={Recommendation} />
-            </Route>
-        </Router>
-  );
-} else {
-  routes =(
+function checkAuth() {
+  if (!cookie.load('token')){
+    browserHistory.replace('/welcome');
+  }
+}
+
+const routes =(
     <Router history={browserHistory}>
       <Route path='/' component={App}>
-        <IndexRoute component={Welcome} />
+        <IndexRoute component={CategoryList} onEnter={checkAuth}/>
+        <Route path='/category/:selection' component={Recommendation} onEnter={checkAuth}/>
+        <Route path='/welcome' component={Welcome} />
         <Route path='/signup' component={Signup} />
         <Route path='/login' component={Login} />
       </Route>
     </Router>
   );
-}
-
 
 ReactDOM.render(
   <Provider store={store}>
