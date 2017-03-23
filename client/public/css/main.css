@@ -65,6 +65,10 @@ ul {
     height: 200px;
   }
 
+  .back-btn{
+    width: 80px;
+  }
+
   .back-btn:hover{
     box-shadow: 6px 5px 30px #505050;
   }
