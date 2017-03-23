@@ -21,7 +21,6 @@ export class Signup extends React.Component {
     this.props.dispatch(actions.addUser(formData));
   }
 
-//add refs to grab user input
   render(){
     return (
       <div className='signup-page'>
