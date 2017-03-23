@@ -2,6 +2,7 @@ import * as actions from '../actions/index';
 
 const initialState = {
   cards: [],
+  username: '',
   userCards: [],
   error: null
 }

@@ -13,6 +13,7 @@ import Welcome from './components/welcome';
 import Signup from './components/signup';
 import Login from './components/login';
 import cookie from 'react-cookie';
+import CardChooser from './components/card-chooser';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -30,6 +31,7 @@ const routes =(
         <Route path='/welcome' component={Welcome} />
         <Route path='/signup' component={Signup} />
         <Route path='/login' component={Login} />
+        <Route path='/allCards' component={CardChooser} />
       </Route>
     </Router>
   );
