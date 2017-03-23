@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Card from './Card';
+import RecommendedCard from './recommended-card';
 import { Link } from 'react-router';
 import '../../public/css/main.css'
 
@@ -29,7 +29,7 @@ export function Recommendation (props) {
   //props.params is defined by the variable route '/:selection'
   const {selection} = props.params;
   const {bestPercent} = props;
-  const cards = props.bestCards.map((card, index) => <Card key={index}
+  const cards = props.bestCards.map((card, index) => <RecommendedCard key={index}
                                                           name={card}
                                                        percent={bestPercent} />)
 

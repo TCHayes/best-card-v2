@@ -2,7 +2,8 @@ import React from 'react';
 import '../../public/css/main.css'
 import * as actions from '../actions';
 import {connect} from 'react-redux';
-import Card from './Card';
+import Card from './card';
+
 
 
 export class CardChooser extends React.Component {
