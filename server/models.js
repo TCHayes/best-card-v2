@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
@@ -22,6 +23,22 @@ const userSchema = mongoose.Schema({
     categories: Object
   }]
 })
+
+userSchema.methods.apiRepr = function() {
+  return {
+    username: this.username || '',
+    firstName: this.firstName || '',
+    lastName: this.lastName || ''
+  };
+}
+
+// userSchema.methods.validatePassword = function(password) {
+//   return bcrypt.compare(password, this.password);
+// }
+
+userSchema.statics.hashPassword = function(password) {
+  return bcrypt.hash(password, 10);
+}
 
 const Card = mongoose.model('Card', cardSchema);
 const User = mongoose.model('User', userSchema);
