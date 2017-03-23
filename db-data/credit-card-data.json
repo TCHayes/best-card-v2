@@ -1,0 +1,81 @@
+{"name": "Chase Freedom",
+ "categories": {
+ 	"gas": 0.05,
+ 	"groceries": 0.01,
+ 	"restaurants": 0.01,
+ 	"travel": 0.01,
+ 	"other": 0.01
+ }
+}
+{"name": "Chase Freedom Unlimited",
+ "categories": {
+ 	"gas": 0.015,
+ 	"groceries": 0.015,
+ 	"restaurants": 0.015,
+ 	"travel": 0.015,
+ 	"other": 0.015
+ }
+}
+{"name": "Amex Blue Cash Preferred",
+ "categories": {
+ 	"gas": 0.03,
+ 	"groceries": 0.06,
+ 	"restaurants": 0.01,
+ 	"travel": 0.01,
+ 	"other": 0.01
+ }
+}
+{"name": "Chase Sapphire Reserve",
+ "categories": {
+ 	"gas": 0.015,
+ 	"groceries": 0.015,
+ 	"restaurants": 0.045,
+ 	"travel": 0.045,
+ 	"other": 0.015
+ }
+}
+{"name": "Discover it",
+ "categories": {
+ 	"gas": 0.05,
+ 	"groceries": 0.01,
+ 	"restaurants": 0.01,
+ 	"travel": 0.01,
+ 	"other": 0.01
+ }
+}
+{"name": "Citi Double Cash",
+ "categories": {
+ 	"gas": 0.02,
+ 	"groceries": 0.02,
+ 	"restaurants": 0.02,
+ 	"travel": 0.02,
+ 	"other": 0.02
+ }
+}
+{"name": "Capital One Quicksilver",
+ "categories": {
+ 	"gas": 0.015,
+ 	"groceries": 0.015,
+ 	"restaurants": 0.015,
+ 	"travel": 0.015,
+ 	"other": 0.015
+ }
+}
+{"name": "Capital One Venture",
+ "categories": {
+ 	"gas": 0.02,
+ 	"groceries": 0.02,
+ 	"restaurants": 0.02,
+ 	"travel": 0.02,
+ 	"other": 0.02
+ }
+}
+{"name": "Amex Blue Cash Everyday",
+ "categories": {
+ 	"gas": 0.02,
+ 	"groceries": 0.03,
+ 	"restaurants": 0.01,
+ 	"travel": 0.01,
+ 	"other": 0.01
+ }
+}
