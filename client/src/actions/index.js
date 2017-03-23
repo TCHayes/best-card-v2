@@ -12,6 +12,12 @@ export const fetchUserFailure = (error) => ({
     error
 });
 
+export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
+export const addUserSuccess = (data) => ({
+    type: ADD_USER_SUCCESS,
+    //NEED TO ALSO BRING USER TO MAIN APP PAGE
+});
+
 export const fetchUser = () => dispatch => {
 
     return fetch(`/api/users?token=${cookie.load('token')}`).then(response => {
@@ -28,8 +34,34 @@ export const fetchUser = () => dispatch => {
     })
 }
 
+export const addUser = (formData) => dispatch => {
+
+    return fetch(`/api/users`,
+      {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        dispatch(addUserSuccess(data.cards));
+    })
+    .catch(error => {
+        dispatch(fetchUserFailure(error));
+        //MIGHT WANT TO RENAME TO JUST fetchFailure OR SOMETHING SIMILAR
+    })
+}
 
 
+
+
+
+
+//----------------------Cards Actions below----------------------------------->
 
 export const FETCH_CARDS_SUCCESS = 'FETCH_CARDS_SUCCESS';
 export const fetchCardsSuccess = (data) => ({
