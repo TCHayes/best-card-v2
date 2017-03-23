@@ -7,9 +7,9 @@ export default function Login (props) {
 
   return (
     <div className='login-page'>
-      <form onSubmit={() => {cookie.save('token', document.getElementById("userName").value)}}>
-        <label htmlFor="userName">Username:</label>
-        <input type='text' id="userName"></input>
+      <form onSubmit={() => {cookie.save('token', document.getElementById("username").value)}}>
+        <label htmlFor="username">Username:</label>
+        <input type='text' id="username"></input>
         <label htmlFor="password">Password:</label>
         <input type='text' id="password"></input>
         <button type='submit' className='btn'>Submit</button>
