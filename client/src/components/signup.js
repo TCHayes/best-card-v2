@@ -1,30 +1,49 @@
 import React from 'react';
 import '../../public/css/main.css'
 import { Link } from 'react-router';
+import * as actions from '../actions';
+import {connect} from 'react-redux';
 
-export default function Signup (props) {
+export class Signup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
 
-  return (
-    <div className='signup-page'>
-      <form>
-        <label htmlFor="firstName">First Name:</label>
-        <input type='text' id="firstName"></input>
-        <label htmlFor="lastName">Last Name:</label>
-        <input type='text' id="lastName"></input>
-        <label htmlFor="username">Username:</label>
-        <input type='text' id="username"></input>
-        <label htmlFor="password">Password:</label>
-        <input type='text' id="password"></input>
-        <button type='submit' className='btn'>Submit</button>
-      </form>
-    </div>
-  )
+  onSubmit(e){
+    e.preventDefault();
+    let formData = {
+      firstName: this.firstName.value,
+      lastName: this.lastName.value,
+      username: this.username.value,
+      password: this.password.value
+    }
+    this.props.dispatch(actions.addUser(formData));
+  }
+
+//add refs to grab user input
+  render(){
+    return (
+      <div className='signup-page'>
+        <form onSubmit={this.onSubmit}>
+          <label htmlFor="firstName">First Name:</label>
+          <input type='text' id="firstName"
+                            ref={ref => this.firstName = ref}></input>
+          <label htmlFor="lastName">Last Name:</label>
+          <input type='text' id="lastName"
+                            ref={ref => this.lastName = ref}></input>
+          <label htmlFor="username">Username:</label>
+          <input type='text' id="username"
+                            ref={ref => this.username = ref}></input>
+          <label htmlFor="password">Password:</label>
+          <input type='text' id="password"
+                            ref={ref => this.password = ref}></input>
+          <button type='submit' className='btn'>Submit</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 
-{/* <form onSubmit={this.props.dispatch(actions.addUser(
-  {firstName: document.getElementById("firstName").value,
-  lastName: document.getElementById("lastName").value,
-  username: document.getElementById("username").value,
-  password: document.getElementById("password").value}
-))}> */}
+export default connect()(Signup);

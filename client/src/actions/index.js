@@ -38,8 +38,9 @@ export const addUser = (formData) => dispatch => {
 
     return fetch(`/api/users`,
       {
+        headers: new Headers({ 'Content-Type': 'application/json' }),
         method: "POST",
-        body: formData
+        body: JSON.stringify(formData)
       })
       .then(response => {
         if (!response.ok) {
