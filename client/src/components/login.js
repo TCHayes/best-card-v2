@@ -1,14 +1,25 @@
 import React from 'react';
 import '../../public/css/main.css';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import cookie from 'react-cookie';
 
 export default class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    cookie.save('token', this.username.value);
+    const path = '/';
+    browserHistory.push(path);
+  }
 
   render(){
     return (
       <div className='login-page'>
-        <form onSubmit={() => {cookie.save('token', this.username.value)}}>
+        <form onSubmit={this.onSubmit}>
           <label htmlFor="username">Username:</label>
           <input type='text' id="username" ref={ref => this.username = ref}></input>
           <label htmlFor="password">Password:</label>
