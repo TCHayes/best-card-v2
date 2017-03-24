@@ -35,17 +35,21 @@ export class Signup extends React.Component {
         <form onSubmit={this.onSubmit}>
           <label htmlFor="firstName">First Name:</label>
           <input type='text' id="firstName"
-                            ref={ref => this.firstName = ref}></input>
+                            ref={ref => this.firstName = ref}
+                            placeholder="First name"></input>
           <label htmlFor="lastName">Last Name:</label>
           <input type='text' id="lastName"
-                            ref={ref => this.lastName = ref}></input>
+                            ref={ref => this.lastName = ref}
+                            placeholder="Last name"></input>
           <label htmlFor="username">Username:</label>
           <input type='text' id="username"
-                            ref={ref => this.username = ref}></input>
+                            ref={ref => this.username = ref}
+                            placeholder="Username"></input>
           <label htmlFor="password">Password:</label>
-          <input type='text' id="password"
-                            ref={ref => this.password = ref}></input>
-          <button type='submit' className='btn'>Submit</button>
+          <input type='password' id="password"
+                            ref={ref => this.password = ref}
+                            placeholder="Password"></input>
+          <button type='submit' className='btn submit-btn'>Submit</button>
         </form>
       </div>
     )
