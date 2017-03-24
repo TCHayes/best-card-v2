@@ -120,14 +120,18 @@ app.put('/api/users', (req, res) => {
 
   let {username, cards} = req.body;
 
-  User
-    .find(username, {$set: cards}, {new: true})
-    .exec()
-    .then(updatedUser => res.status(204).json(updatedUser.apiRepr()))
-    .catch(err => res.status(500).json({message: 'Something went wrong'}));
+  return User
+    .update({ username: username }, { $addToSet: { cards: {$each: cards }}}, function(error,user) {
+      if (error){
+        res.send(error);
+      }
+      res.send(user);
+    })
+    // .update({username: username}, {$set: cards}, {new: true})
+    // .exec()
+    // .then(updatedUser => res.status(204).json(updatedUser.apiRepr()))
+    // .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
-
-
 
 //-----------------END PUT method for editing user's cards--------------------->
 
