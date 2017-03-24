@@ -4,6 +4,7 @@ import * as actions from '../actions';
 import {connect} from 'react-redux';
 import { browserHistory } from 'react-router';
 import cookie from 'react-cookie';
+import basic from 'basic-authorization-header';
 
 export class Signup extends React.Component {
   constructor(props) {
@@ -21,8 +22,10 @@ export class Signup extends React.Component {
     }
     this.props.dispatch(actions.addUser(formData));
     this.props.dispatch(actions.setUsername(this.username.value));
-    const path = '/allCards';
+    const headers = {'Authorization': basic(this.username.value, this.password.value)};
+    cookie.save('headers', headers);
     cookie.save('token', this.username.value);
+    const path = '/allCards';
     browserHistory.push(path);
   }
 
