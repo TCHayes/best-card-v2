@@ -14,10 +14,15 @@ export class CardChooser extends React.Component {
 
     render() {
         const cards = this.props.cards.map((card, index) => <Card key={index}
-                                                                name={card.name}/>)
+                                                                name={card.name}
+                                                              toggled={card.toggled}
+                                                              index={index}/>)
+
         return (
             <div>
-                {cards}
+              <h3>Please Select Your Cards</h3>
+              {cards}
+              <button className='btn submit-cards'>Submit</button>
             </div>
         )
     }
