@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import cookie from 'react-cookie';
+//import cookie from 'react-cookie';
 
 class App extends Component {
 

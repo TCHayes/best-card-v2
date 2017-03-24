@@ -1,3 +1,5 @@
+const {BasicStrategy} = require('passport-http');
+const passport = require('passport');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -10,6 +12,31 @@ const DATABASE_URL = process.env.DATABASE_URL ||
 app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
+
+const strategy = new BasicStrategy(function(username, password, callback) {
+
+  let user;
+  User
+    .findOne({username: username})
+    .exec()
+    .then(_user => {
+      user = _user;
+      if (!user) {
+        return callback(null, false, {message: 'Incorrect username'});
+      }
+      return user.validatePassword(password);
+    })
+    .then(isValid => {
+      if (!isValid) {
+        return callback(null, false, {message: 'Incorrect password'});
+      }
+      else {
+        return callback(null, user)
+      }
+    });
+});
+
+passport.use(strategy);
 
 app.get('/api/cards', (req, res) => {
  Card
@@ -24,14 +51,16 @@ app.get('/api/cards', (req, res) => {
    });
 });
 
-app.get('/api/users', (req, res) => {
-  //console.log(req.query.token);
+app.get('/api/users', passport.authenticate('basic', {session: false}),
+(req, res) => {
+
   // what if there is no token?
   User
     .find({username: req.query.token})
     .exec()
     .then(userInfo => {
-      res.json(userInfo[0]);
+        console.log(userInfo);
+        res.json(userInfo[0]);
     })
     .catch(err => {
       console.error(err);

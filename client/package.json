@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "basic-authorization-header": "^0.2.7",
     "react": "^15.4.2",
     "react-cookie": "^1.0.5",
     "react-dom": "^15.4.2",
