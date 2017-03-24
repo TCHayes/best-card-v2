@@ -16,9 +16,16 @@ export class CardChooser extends React.Component {
     }
 
     submitCards(){
-      let formData = {
+      function isToggled(card){
+        return card.toggled===true;
+      }
+      //filter for only cards which have been toggled (selected by user)
+      const filteredCards = this.props.cards.filter(isToggled);
+      //remove toggled key before adding to DB
+      filteredCards.forEach(card => {delete card.toggled});
+      const formData = {
         username: this.props.username,
-        cards: this.props.cards
+        cards: filteredCards
       }
       this.props.dispatch(actions.addUserCards(formData));
       const path = '/';
