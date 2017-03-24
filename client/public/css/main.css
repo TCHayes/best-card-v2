@@ -12,6 +12,35 @@ ul {
   padding-left: 0;
 }
 
+input {
+  display: block;
+  border: 1px solid #2A93D5;
+  color: #135589;
+  height: 50px;
+  font-size: 30px;
+  margin: 5px auto;
+  padding: 5px 20px;
+  width: 50%;
+  border-radius: 5px;
+  background: #EDFAFD;
+}
+
+::placeholder {
+  text-align: center;
+  color: #AED9DA;
+}
+
+label {
+  display: block;
+  margin: 5px;
+  color: #135589;
+  font-size: 20px;
+}
+
+.signup-page {
+  text-align: center;
+}
+
 .btn {
   border: 2px solid #2A93D5;
   border-radius: 5px;
@@ -55,8 +84,18 @@ ul {
   color: #EDFAFD;
 }
 
-/*This styling below applies only to screens with more than 683px:*/
+.submit-btn {
+  margin-top: 75px;
+}
+
+/*This styling below applies only to screens with more than 400px:*/
 @media screen and (min-width: 400px) {
+
+  input {
+    width: 150px;
+    font-size: 20px;
+  }
+
   .CategoryList{
     margin-left: auto;
     margin-right: auto;
