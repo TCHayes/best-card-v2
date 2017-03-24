@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import cookie from 'react-cookie';
+import { browserHistory } from 'react-router';
 
 class App extends Component {
+
+    logout(e) {
+        cookie.remove('token');
+        cookie.remove('headers');
+        browserHistory.replace('/welcome');
+
+    }
 
   render() {
     return (
@@ -10,6 +19,7 @@ class App extends Component {
           <h2 className='app-title'>BestCard</h2>
         </div>
         {this.props.children}
+        <button className='logout' onClick={this.logout}>Logout</button>
       </div>
     );
   }
