@@ -20,6 +20,7 @@ export class Signup extends React.Component {
       password: this.password.value
     }
     this.props.dispatch(actions.addUser(formData));
+    this.props.dispatch(actions.setUsername(this.username.value));
     const path = '/allCards';
     cookie.save('token', this.username.value);
     browserHistory.push(path);
