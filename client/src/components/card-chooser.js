@@ -2,6 +2,7 @@ import React from 'react';
 import '../../public/css/main.css'
 import * as actions from '../actions';
 import {connect} from 'react-redux';
+import { browserHistory } from 'react-router';
 import Card from './card';
 
 export class CardChooser extends React.Component {
@@ -20,6 +21,8 @@ export class CardChooser extends React.Component {
         cards: this.props.cards
       }
       this.props.dispatch(actions.addUserCards(formData));
+      const path = '/';
+      browserHistory.push(path);
     }
 
     render() {
