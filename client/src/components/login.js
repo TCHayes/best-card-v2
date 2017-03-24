@@ -15,7 +15,6 @@ export class Login extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     const headers = {'Authorization': basic(this.username.value, this.password.value)};
-    console.log(headers);
     cookie.save('token', this.username.value);
     cookie.save('headers', headers);
     this.props.dispatch(actions.setUsername(this.username.value));
