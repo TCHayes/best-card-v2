@@ -24,6 +24,9 @@ export default (state=initialState, action) => {
     if (action.type === actions.FETCH_USER_FAILURE) {
         return {...state, error: action.error};
     }
+    if (action.type === actions.SET_USERNAME) {
+      return {...state, username: action.username}
+    }
     if (action.type === actions.TOGGLE_CARD) {
       return update(state, {
             cards: {
@@ -32,6 +35,10 @@ export default (state=initialState, action) => {
               }
             }
       });
+    }
+    if (action.type === actions.ADD_USER_CARDS_SUCCESS) {
+      console.log("Hello from ADD_USER_CARDS_SUCCESS reducer");
+      return state;
     }
   return state;
 };
