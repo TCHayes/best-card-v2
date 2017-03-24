@@ -6,6 +6,12 @@ export const toggleCard = (cardIndex) => ({
   target: cardIndex
 });
 
+export const SET_USERNAME = 'SET_USERNAME';
+export const setUsername = (username) => ({
+  type: SET_USERNAME,
+  username: username
+});
+
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
 export const fetchUserSuccess = (data) => ({
     type: FETCH_USER_SUCCESS,
@@ -21,7 +27,11 @@ export const fetchUserFailure = (error) => ({
 export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
 export const addUserSuccess = (data) => ({
     type: ADD_USER_SUCCESS,
-    //NEED TO ALSO BRING USER TO MAIN APP PAGE
+});
+
+export const ADD_USER_CARDS_SUCCESS = 'ADD_USER_CARDS_SUCCESS';
+export const addUserCardsSuccess = (data) => ({
+    type: ADD_USER_CARDS_SUCCESS,
 });
 
 export const fetchUser = () => dispatch => {
@@ -56,6 +66,29 @@ export const addUser = (formData) => dispatch => {
     })
     .then(data => {
         dispatch(addUserSuccess(data.cards));
+    })
+    .catch(error => {
+        dispatch(fetchUserFailure(error));
+        //MIGHT WANT TO RENAME TO JUST fetchFailure OR SOMETHING SIMILAR
+    })
+}
+
+export const addUserCards = (formData) => dispatch => {
+
+    return fetch(`/api/users`,
+      {
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        method: "PUT",
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        dispatch(addUserCardsSuccess(data.cards));
     })
     .catch(error => {
         dispatch(fetchUserFailure(error));
