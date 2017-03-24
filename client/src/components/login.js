@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../public/css/main.css';
-import { browserHistory, Link } from 'react-router';
+import { browserHistory } from 'react-router';
 import cookie from 'react-cookie';
 
 export default class Login extends React.Component {
