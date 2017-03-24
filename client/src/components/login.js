@@ -27,10 +27,10 @@ export class Login extends React.Component {
       <div className='login-page'>
         <form onSubmit={this.onSubmit}>
           <label htmlFor="username">Username:</label>
-          <input type='text' id="username" ref={ref => this.username = ref}></input>
+          <input type='text' id="username" ref={ref => this.username = ref} placeholder="Username"></input>
           <label htmlFor="password">Password:</label>
-          <input type='text' id="password" ref={ref => this.password = ref}></input>
-          <button type='submit' className='btn'>Submit</button>
+          <input type='password' id="password" ref={ref => this.password = ref} placeholder="Password"></input>
+          <button type='submit' className='btn submit-btn'>Submit</button>
         </form>
       </div>
     )
