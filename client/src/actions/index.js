@@ -1,5 +1,11 @@
 import cookie from 'react-cookie';
 
+export const TOGGLE_CARD = 'TOGGLE_CARD';
+export const toggleCard = (cardIndex) => ({
+  type: TOGGLE_CARD,
+  target: cardIndex
+});
+
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
 export const fetchUserSuccess = (data) => ({
     type: FETCH_USER_SUCCESS,
