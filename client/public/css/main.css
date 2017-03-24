@@ -88,6 +88,18 @@ label {
   margin-top: 75px;
 }
 
+.logout {
+  margin-top: 10px;
+  border: 2px solid #2A93D5;
+  border-radius: 5px;
+  width: 40%;
+  height: 30px;
+  background-color: #EDFAFD;
+  font-size: 1em;
+  text-decoration: none;
+  color: #135589;
+}
+
 /*This styling below applies only to screens with more than 400px:*/
 @media screen and (min-width: 400px) {
 
@@ -121,5 +133,9 @@ label {
 
   .back-btn:hover{
     box-shadow: 6px 5px 30px #505050;
+  }
+
+  .logout {
+    width: 80px;
   }
 }
