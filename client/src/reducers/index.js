@@ -31,7 +31,7 @@ export default (state=initialState, action) => {
       return update(state, {
             cards: {
               [action.target]: {
-                toggled: {$set: true}
+                toggled: {$set: !state.cards[action.target].toggled}
               }
             }
       });
