@@ -39,7 +39,7 @@ app.get('/api/users', (req, res) => {
     });
 });
 
-//----------POST method for adding users to the users collection in our DB----->
+//----START POST method for adding users to the users collection in our DB----->
 app.post('/api/users', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
@@ -105,8 +105,31 @@ app.post('/api/users', (req, res) => {
     });
 });
 
-//---------------------------------End of POST method for adding new users----->
+//---------------------------------END of POST method for adding new users----->
 
+//------------START PUT method for editing user's cards------------------------>
+
+app.put('/api/users', (req, res) => {
+  if (!req.body) {
+    return res.status(400).json({message: 'No request body'});
+  }
+
+  if (!('username' in req.body)) {
+    return res.status(422).json({message: 'Missing field: username'});
+  }
+
+  let {username, cards} = req.body;
+
+  User
+    .find(username, {$set: cards}, {new: true})
+    .exec()
+    .then(updatedUser => res.status(204).json(updatedUser.apiRepr()))
+    .catch(err => res.status(500).json({message: 'Something went wrong'}));
+});
+
+
+
+//-----------------END PUT method for editing user's cards--------------------->
 
 // Serve the built client
 app.use(express.static(path.resolve(__dirname, '../client/build')));
