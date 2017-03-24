@@ -1,9 +1,8 @@
 import React from 'react';
-import '../../public/css/main.css'
+import '../../public/css/main.css';
 
 export default function RecommendedCard (props) {
 
-    
   return (
     <div className='btn results-btn'>
       <div className='card-text'>
