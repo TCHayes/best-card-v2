@@ -59,7 +59,6 @@ app.get('/api/users', passport.authenticate('basic', {session: false}),
     .find({username: req.query.token})
     .exec()
     .then(userInfo => {
-        console.log(userInfo);
         res.json(userInfo[0]);
     })
     .catch(err => {
