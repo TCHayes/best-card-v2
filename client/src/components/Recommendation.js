@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RecommendedCard from './recommended-card';
 import { Link } from 'react-router';
-import '../../public/css/main.css'
+import '../../public/css/main.css';
 
 function mapStateToProps(state, props) {
    let bestPercent = 0;

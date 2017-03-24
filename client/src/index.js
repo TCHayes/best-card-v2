@@ -15,7 +15,7 @@ import Login from './components/login';
 import cookie from 'react-cookie';
 import CardChooser from './components/card-chooser';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk));
 
 function checkAuth() {
   if (!cookie.load('token')){

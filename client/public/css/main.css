@@ -44,6 +44,17 @@ ul {
   padding: 15px;
 }
 
+.card-toggled {
+  background-color: #EDFAFD;
+  border-color: #b3ffa8;
+  box-shadow: 0px 0px 10px 7px #2A93D5;
+}
+
+.submit-cards {
+  background-color: #2A93D5;
+  color: #EDFAFD;
+}
+
 /*This styling below applies only to screens with more than 683px:*/
 @media screen and (min-width: 400px) {
   .CategoryList{

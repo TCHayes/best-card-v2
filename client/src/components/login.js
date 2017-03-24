@@ -3,8 +3,10 @@ import '../../public/css/main.css';
 import { browserHistory } from 'react-router';
 import cookie from 'react-cookie';
 import basic from 'basic-authorization-header';
+import * as actions from '../actions';
+import { connect } from 'react-redux';
 
-export default class Login extends React.Component {
+export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -16,6 +18,7 @@ export default class Login extends React.Component {
     console.log(headers);
     cookie.save('token', this.username.value);
     cookie.save('headers', headers);
+    this.props.dispatch(actions.setUsername(this.username.value));
     const path = '/';
     browserHistory.push(path);
   }
@@ -34,3 +37,5 @@ export default class Login extends React.Component {
     )
   }
 }
+
+export default connect()(Login);

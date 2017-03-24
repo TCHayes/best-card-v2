@@ -1,9 +1,8 @@
 import React from 'react';
-import '../../public/css/main.css'
-//import { Link } from 'react-router';
+import '../../public/css/main.css';
 import * as actions from '../actions';
 import {connect} from 'react-redux';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 import cookie from 'react-cookie';
 
 export class Signup extends React.Component {
@@ -21,6 +20,7 @@ export class Signup extends React.Component {
       password: this.password.value
     }
     this.props.dispatch(actions.addUser(formData));
+    this.props.dispatch(actions.setUsername(this.username.value));
     const path = '/allCards';
     cookie.save('token', this.username.value);
     browserHistory.push(path);
