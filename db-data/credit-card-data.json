@@ -1,19 +1,19 @@
 {"name": "Chase Freedom",
  "categories": {
- 	"gas": 0.05,
- 	"groceries": 0.01,
- 	"restaurants": 0.01,
- 	"travel": 0.01,
- 	"other": 0.01
+ 	"gas": 0.015,
+ 	"groceries": 0.075,
+ 	"restaurants": 0.015,
+ 	"travel": 0.015,
+ 	"other": 0.015
  }
 }
 {"name": "Chase Freedom Unlimited",
  "categories": {
- 	"gas": 0.015,
- 	"groceries": 0.015,
- 	"restaurants": 0.015,
- 	"travel": 0.015,
- 	"other": 0.015
+ 	"gas": 0.0225,
+ 	"groceries": 0.0225,
+ 	"restaurants": 0.0225,
+ 	"travel": 0.0225,
+ 	"other": 0.0225
  }
 }
 {"name": "Amex Blue Cash Preferred",
@@ -36,7 +36,7 @@
 }
 {"name": "Discover it",
  "categories": {
- 	"gas": 0.05,
+ 	"gas": 0.01,
  	"groceries": 0.01,
  	"restaurants": 0.01,
  	"travel": 0.01,
