@@ -32,7 +32,6 @@ export function Recommendation (props) {
   const cards = props.bestCards.map((card, index) => <RecommendedCard key={index}
                                                           name={card}
                                                        percent={bestPercent} />)
-
   return (
     <div id='recommendation-container'>
       <div id='selection'>

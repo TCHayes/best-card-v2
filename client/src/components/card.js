@@ -10,11 +10,11 @@ export function Card (props) {
   };
 
   return (
-      <div className={`btn results-btn ${toggleCard}`} onClick={toggler}>
-        <div className='card-text'>
-          {props.name}<br />
-        </div>
+    <div className={`btn results-btn ${toggleCard}`} onClick={toggler}>
+      <div className='card-text'>
+        {props.name}<br />
       </div>
+    </div>
   )
 }
 

@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const cardSchema = mongoose.Schema({
-   "name": String,
-   "categories": {
-     	"gas": Number,
-     	"groceries": Number,
-     	"restaurants": Number,
-     	"travel": Number,
-     	"other": Number
-     }
+  "name": String,
+  "categories": {
+    "gas": Number,
+   	"groceries": Number,
+   	"restaurants": Number,
+   	"travel": Number,
+   	"other": Number,
+   }
 });
 
 const userSchema = mongoose.Schema({
@@ -20,9 +20,9 @@ const userSchema = mongoose.Schema({
   password: {type:String, required:true},
   cards: [{
     name: String,
-    categories: Object
-  }]
-})
+    categories: Object,
+  }],
+});
 
 userSchema.methods.apiRepr = function() {
   return {
@@ -31,14 +31,10 @@ userSchema.methods.apiRepr = function() {
     lastName: this.lastName || '',
     cards: this.cards || '',
   };
-}
-
-// userSchema.methods.validatePassword = function(password) {
-//   return bcrypt.compare(password, this.password);
-// }
+};
 
 userSchema.methods.validatePassword = function(password) {
-    return bcrypt.compare(password, this.password);
+  return bcrypt.compare(password, this.password);
 }
 
 userSchema.statics.hashPassword = function(password) {

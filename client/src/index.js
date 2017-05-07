@@ -24,17 +24,17 @@ function checkAuth() {
 }
 
 const routes =(
-    <Router history={browserHistory}>
-      <Route path='/' component={App}>
-        <IndexRoute component={CategoryList} onEnter={checkAuth}/>
-        <Route path='/category/:selection' component={Recommendation} onEnter={checkAuth}/>
-        <Route path='/welcome' component={Welcome} />
-        <Route path='/signup' component={Signup} />
-        <Route path='/login' component={Login} />
-        <Route path='/allCards' component={CardChooser} />
-      </Route>
-    </Router>
-  );
+  <Router history={browserHistory}>
+    <Route path='/' component={App}>
+      <IndexRoute component={CategoryList} onEnter={checkAuth}/>
+      <Route path='/category/:selection' component={Recommendation} onEnter={checkAuth}/>
+      <Route path='/welcome' component={Welcome} />
+      <Route path='/signup' component={Signup} />
+      <Route path='/login' component={Login} />
+      <Route path='/allCards' component={CardChooser} />
+    </Route>
+  </Router>
+);
 
 ReactDOM.render(
   <Provider store={store}>

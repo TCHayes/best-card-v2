@@ -5,12 +5,11 @@ import { browserHistory } from 'react-router';
 
 class App extends Component {
 
-    logout(e) {
-        cookie.remove('token');
-        cookie.remove('headers');
-        browserHistory.replace('/welcome');
-
-    }
+  logout(e) {
+    cookie.remove('token');
+    cookie.remove('headers');
+    browserHistory.replace('/welcome');
+  }
 
   render() {
     return (

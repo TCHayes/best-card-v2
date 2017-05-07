@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 const app = express();
 const {Card, User} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
-                       global.DATABASE_URL || 'mongodb://localhost/ccRecommendDb';
+                       global.DATABASE_URL ||
+                       'mongodb://localhost/ccRecommendDb';
 
 app.use(bodyParser.json());
 
@@ -31,7 +32,7 @@ const strategy = new BasicStrategy(function(username, password, callback) {
         return callback(null, false, {message: 'Incorrect password'});
       }
       else {
-        return callback(null, user)
+        return callback(null, user);
       }
     });
 });
@@ -51,15 +52,14 @@ app.get('/api/cards', (req, res) => {
    });
 });
 
-app.get('/api/users', passport.authenticate('basic', {session: false}),
-(req, res) => {
+app.get('/api/users', passport.authenticate('basic', {session: false}), (req, res) => {
 
   // what if there is no token?
   User
     .find({username: req.query.token})
     .exec()
     .then(userInfo => {
-        res.json(userInfo[0]);
+      res.json(userInfo[0]);
     })
     .catch(err => {
       console.error(err);
@@ -169,41 +169,41 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 // Unhandled requests which aren't for the API should serve index.html so
 // client-side routing using browserHistory can function
 app.get(/^(?!\/api(\/|$))/, (req, res) => {
-    const index = path.resolve(__dirname, '../client/build', 'index.html');
-    res.sendFile(index);
+  const index = path.resolve(__dirname, '../client/build', 'index.html');
+  res.sendFile(index);
 });
 
 let server;
 function runServer(port=3001) {
-    return new Promise((resolve, reject) => {
-      mongoose.connect(DATABASE_URL, err => {
-        if(err) {
-          return reject(err);
-        }
-        console.log('Db connected');
+  return new Promise((resolve, reject) => {
+    mongoose.connect(DATABASE_URL, err => {
+      if(err) {
+        return reject(err);
+      }
+      console.log('Db connected');
 
-        server = app.listen(port, () => {
-            resolve();
-        }).on('error', reject);
-      });
+      server = app.listen(port, () => {
+        resolve();
+      }).on('error', reject);
     });
+  });
 }
 
 function closeServer() {
-    return new Promise((resolve, reject) => {
-        server.close(err => {
-            if (err) {
-                return reject(err);
-            }
-            resolve();
-        });
+  return new Promise((resolve, reject) => {
+    server.close(err => {
+      if (err) {
+        return reject(err);
+      }
+      resolve();
     });
+  });
 }
 
 if (require.main === module) {
-    runServer();
+  runServer();
 }
 
 module.exports = {
-    app, runServer, closeServer
+  app, runServer, closeServer
 };

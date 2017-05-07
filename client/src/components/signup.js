@@ -56,5 +56,4 @@ export class Signup extends React.Component {
   }
 }
 
-
 export default connect()(Signup);
