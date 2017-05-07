@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RecommendedCard from './recommended-card';
 import { Link } from 'react-router';
+import cookie from 'react-cookie';
+import { browserHistory } from 'react-router';
 import '../../public/css/main.css';
 
 function mapStateToProps(state, props) {
@@ -25,6 +27,12 @@ function mapStateToProps(state, props) {
    }
 }
 
+function logout(e) {
+  cookie.remove('token');
+  cookie.remove('headers');
+  browserHistory.replace('/welcome');
+}
+
 export function Recommendation (props) {
   //props.params is defined by the variable route '/:selection'
   const {selection} = props.params;
@@ -39,6 +47,7 @@ export function Recommendation (props) {
       </div>
       {cards}
       <Link to="/" ><button className='back-btn'>Back</button></Link>
+      <button className='logout' onClick={logout}>Logout</button>
     </div>
   )
 }
