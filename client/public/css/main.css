@@ -7,6 +7,25 @@ AED9DA
 135589
 */
 
+body {
+  background-color: #fafafa;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #005f83;
+  height: 25px;
+  padding: 10px;
+  color: white;
+}
+
+.app-title {
+  margin: 0;
+}
+
 ul {
   list-style: none;
   padding-left: 0;

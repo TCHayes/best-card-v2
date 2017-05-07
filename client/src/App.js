@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../public/css/main.css';
 import cookie from 'react-cookie';
 import { browserHistory } from 'react-router';
 
