@@ -2,23 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import CategoryButton from './category-button';
-import cookie from 'react-cookie';
-import { browserHistory } from 'react-router';
 import '../../public/css/main.css'
 
 export class CategoryList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind(this);
+  }
 
   componentDidMount() {
     this.props.dispatch(actions.fetchUser());
   }
 
-  logout(e) {
-    cookie.remove('token');
-    cookie.remove('headers');
-    browserHistory.replace('/welcome');
+  logout(){
+    this.props.dispatch(actions.logout());
   }
 
   render() {
+    if (this.props.error) {this.logout};
     if (!this.props.cards.length) return <div />
     const categories = Object.keys(this.props.cards[0].categories);
     return (
@@ -32,7 +33,8 @@ export class CategoryList extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-    cards: state.userCards
+    cards: state.userCards,
+    error: state.error,
 });
 
 export default connect(mapStateToProps)(CategoryList)

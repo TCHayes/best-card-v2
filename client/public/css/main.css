@@ -150,9 +150,9 @@ label {
     width: 80px;
   }
 
-  .back-btn:hover{
+  /*.back-btn:hover{
     box-shadow: 6px 5px 30px #505050;
-  }
+  }*/
 
   .logout {
     width: 80px;

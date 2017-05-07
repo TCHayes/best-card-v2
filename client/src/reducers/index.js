@@ -1,5 +1,7 @@
 import * as actions from '../actions/index';
 import update from 'immutability-helper';
+import cookie from 'react-cookie';
+import { browserHistory } from 'react-router';
 
 const initialState = {
   cards: [],
@@ -9,6 +11,12 @@ const initialState = {
 }
 
 export default (state=initialState, action) => {
+  if (action.type === actions.LOGOUT) {
+    cookie.remove('token');
+    cookie.remove('headers');
+    browserHistory.replace('/welcome');
+    return {...state, cards: [], username: '', userCards: [], error: null};
+  }
   if (action.type === actions.FETCH_CARDS_SUCCESS) {
     const togglableCards = action.cards.map((card) => ({...card, toggled: false}));
     return {...state, cards: togglableCards, error: null};
@@ -20,7 +28,10 @@ export default (state=initialState, action) => {
     return {...state, userCards: action.cards, error: null};
   }
   if (action.type === actions.FETCH_USER_FAILURE) {
-    return {...state, error: action.error};
+    cookie.remove('token');
+    cookie.remove('headers');
+    browserHistory.replace('/welcome');
+    return {...state, cards: [], username: '', userCards: [], error: action.error};
   }
   if (action.type === actions.SET_USERNAME) {
     return {...state, username: action.username}

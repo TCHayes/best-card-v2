@@ -2,8 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RecommendedCard from './recommended-card';
 import { Link } from 'react-router';
-import cookie from 'react-cookie';
-import { browserHistory } from 'react-router';
+import * as actions from '../actions/index';
 import '../../public/css/main.css';
 
 function mapStateToProps(state, props) {
@@ -27,29 +26,33 @@ function mapStateToProps(state, props) {
    }
 }
 
-function logout(e) {
-  cookie.remove('token');
-  cookie.remove('headers');
-  browserHistory.replace('/welcome');
-}
+export class Recommendation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind(this);
+  }
 
-export function Recommendation (props) {
-  //props.params is defined by the variable route '/:selection'
-  const {selection} = props.params;
-  const {bestPercent} = props;
-  const cards = props.bestCards.map((card, index) => <RecommendedCard key={index}
-                                                          name={card}
-                                                       percent={bestPercent} />)
-  return (
-    <div id='recommendation-container'>
-      <div id='selection'>
-        <h3>{selection.charAt(0).toUpperCase() + selection.slice(1)}</h3>
+  logout(){
+    this.props.dispatch(actions.logout());
+  }
+
+  render() {
+    const {selection} = this.props.params;
+    const {bestPercent} = this.props;
+    const cards = this.props.bestCards.map((card, index) => <RecommendedCard key={index}
+                                                            name={card}
+                                                         percent={bestPercent} />)
+    return (
+      <div id='recommendation-container'>
+        <div id='selection'>
+          <h3>{selection.charAt(0).toUpperCase() + selection.slice(1)}</h3>
+        </div>
+        {cards}
+        <Link to="/" ><button className='btn back-btn'>Back</button></Link>
+        <button className='btn logout' onClick={this.logout}>Logout</button>
       </div>
-      {cards}
-      <Link to="/" ><button className='back-btn'>Back</button></Link>
-      <button className='logout' onClick={logout}>Logout</button>
-    </div>
-  )
+    )
+  }
 }
 
 export default connect(mapStateToProps)(Recommendation);

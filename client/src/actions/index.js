@@ -1,5 +1,10 @@
 import cookie from 'react-cookie';
 
+export const LOGOUT = 'LOGOUT';
+export const logout = () => ({
+  type: LOGOUT,
+});
+
 export const TOGGLE_CARD = 'TOGGLE_CARD';
 export const toggleCard = (cardIndex) => ({
   type: TOGGLE_CARD,
