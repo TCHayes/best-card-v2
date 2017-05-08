@@ -72,6 +72,36 @@ label {
   color: #135589;
 }
 
+.card-chooser-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 2px solid #2A93D5;
+  border-radius: 5px;
+  margin: 10px auto;
+  width: 40%;
+  background-color: #EDFAFD;
+  text-decoration: none;
+  color: #135589;
+}
+
+.card-text {
+  padding: 10px;
+}
+
+.card-toggled {
+  background-color: #EDFAFD;
+  border-color: #b3ffa8;
+  box-shadow: 0px 0px 10px 7px #2A93D5;
+}
+
+.info-text {
+  margin: 20px auto;
+}
+
 .results-btn {
   height: 150px;
 }
@@ -86,16 +116,6 @@ label {
   font-size: 1em;
   text-decoration: none;
   color: #135589;
-}
-
-.card-text {
-  padding: 15px;
-}
-
-.card-toggled {
-  background-color: #EDFAFD;
-  border-color: #b3ffa8;
-  box-shadow: 0px 0px 10px 7px #2A93D5;
 }
 
 .submit-cards {

@@ -39,8 +39,10 @@ export class CardChooser extends React.Component {
                                                           index={index}/>)
     return (
       <div>
-        <h3>Please Select Your Cards</h3>
-        {cards}
+        <h3 className='info-text'>Please Select Your Cards</h3>
+        <div className='card-chooser-container'>
+          {cards}
+        </div>
         <button className='btn submit-cards' onClick={this.submitCards}>Submit</button>
       </div>
     )

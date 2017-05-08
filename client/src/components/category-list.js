@@ -19,7 +19,6 @@ export class CategoryList extends React.Component {
   }
 
   render() {
-    if (this.props.error) {this.logout};
     if (!this.props.cards.length) return <div />
     const categories = Object.keys(this.props.cards[0].categories);
     return (
@@ -37,4 +36,4 @@ const mapStateToProps = (state, props) => ({
     error: state.error,
 });
 
-export default connect(mapStateToProps)(CategoryList)
+export default connect(mapStateToProps)(CategoryList);
