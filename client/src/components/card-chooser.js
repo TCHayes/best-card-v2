@@ -12,7 +12,7 @@ export class CardChooser extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(actions.fetchCards());
+    this.props.dispatch(actions.compareUserCards(this.props.cards, this.props.userCards));
   }
 
   submitCards(){
@@ -52,6 +52,7 @@ export class CardChooser extends React.Component {
 function mapStateToProps(state, props) {
   return {
     cards: state.cards,
+    userCards: state.userCards,
     username: state.username,
   }
 }
