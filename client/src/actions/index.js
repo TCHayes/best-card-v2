@@ -131,3 +131,17 @@ export const fetchCards = () => dispatch => {
     dispatch(fetchCardsFailure(error));
   })
 }
+
+export const compareUserCards = (allCards, userCards) => dispatch => {
+  // This action will compare a user's cards with all cards in order to toggle
+  // the correct cards on the CardChooser page when a user wants to view/update
+  // their cards
+  allCards.forEach((card, index) => {
+    userCards.forEach(userCard => {
+      if (card._id === userCard._id){
+        //toggle the card
+        dispatch(toggleCard(index));
+      }
+    })
+  })
+}

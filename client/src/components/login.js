@@ -18,6 +18,8 @@ export class Login extends React.Component {
     cookie.save('token', this.username.value);
     cookie.save('headers', headers);
     this.props.dispatch(actions.setUsername(this.username.value));
+    this.props.dispatch(actions.fetchUser());
+    this.props.dispatch(actions.fetchCards());
     const path = '/';
     browserHistory.push(path);
   }

@@ -22,6 +22,7 @@ export class Signup extends React.Component {
     }
     this.props.dispatch(actions.addUser(formData));
     this.props.dispatch(actions.setUsername(this.username.value));
+    this.props.dispatch(actions.fetchCards());
     const headers = {'Authorization': basic(this.username.value, this.password.value)};
     cookie.save('headers', headers);
     cookie.save('token', this.username.value);

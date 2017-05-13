@@ -54,7 +54,7 @@ app.get('/api/cards', (req, res) => {
 
 app.get('/api/users', passport.authenticate('basic', {session: false}), (req, res) => {
 
-  // what if there is no token?
+  // TODO what if there is no token?
   User
     .find({username: req.query.token})
     .exec()
@@ -149,19 +149,35 @@ app.put('/api/users', (req, res) => {
   let {username, cards} = req.body;
 
   return User
-    .update({ username: username }, { $addToSet: { cards: {$each: cards }}}, function(error,user) {
-      if (error){
-        res.send(error);
-      }
-      res.send(user);
+    .update({ username: username }, { cards: cards }, function(error, feedback) {
+      if (error) return res.send(error);
+      return res.send(feedback);
     })
-    // .update({username: username}, {$set: cards}, {new: true})
-    // .exec()
-    // .then(updatedUser => res.status(204).json(updatedUser.apiRepr()))
-    // .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 
 //-----------------END PUT method for editing user's cards--------------------->
+
+app.delete('/api/users', (req, res) => {
+  if (!req.body) return res.status(400).json({message: 'No Request Body'});
+  if (!('username' in req.body)) return res.status(422).json({message: 'Missing field: username'});
+
+  return User
+    .find({username: req.body.username})
+    .count()
+    .exec()
+    .then(count => {
+      if (count === 0) return res.status(422).json({message: 'username not found'});
+      User.remove({username: req.body.username}, function (err) {
+        if (err) return console.error(err);
+      });
+      return res.status(204).json({message: 'User has been deleted.'});
+    })
+    .catch(err => res.status(500).json({message: 'Something went wrong'}));
+})
+
+
+
+
 
 // Serve the built client
 app.use(express.static(path.resolve(__dirname, '../client/build')));

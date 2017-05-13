@@ -8,6 +8,8 @@ AED9DA
 */
 
 body {
+  /*background: linear-gradient(130deg, #1aa9e2 0%, #103359 100%, #303030 90%);
+  color: white;*/
   background-color: #fafafa;
 }
 
@@ -61,13 +63,13 @@ label {
 }
 
 .btn {
-  border: 2px solid #2A93D5;
-  border-radius: 5px;
+  border: 1px solid #5ee9ff;
+  border-radius: 2px;
   margin: 10px auto;
-  width: 95%;
+  width: 70%;
   height: 90px;
   background-color: #EDFAFD;
-  font-size: 2em;
+  font-size: 1.5em;
   text-decoration: none;
   color: #135589;
 }
@@ -159,7 +161,7 @@ label {
   }
 
   .btn:hover{
-    box-shadow: 6px 5px 30px #505050;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
   }
 
   .results-btn {
@@ -169,10 +171,6 @@ label {
   .back-btn{
     width: 80px;
   }
-
-  /*.back-btn:hover{
-    box-shadow: 6px 5px 30px #505050;
-  }*/
 
   .logout {
     width: 80px;
