@@ -18,7 +18,8 @@ export class Signup extends React.Component {
       firstName: this.firstName.value,
       lastName: this.lastName.value,
       username: this.username.value,
-      password: this.password.value
+      password: this.password.value,
+      email: this.email.value,
     }
     this.props.dispatch(actions.addUser(formData));
     this.props.dispatch(actions.setUsername(this.username.value));
@@ -50,6 +51,10 @@ export class Signup extends React.Component {
           <input type='password' id="password"
                             ref={ref => this.password = ref}
                             placeholder="Password"></input>
+          <label htmlFor="email">Email:</label>
+          <input type='email' id="email"
+                            ref={ref => this.email = ref}
+                            placeholder="Email"></input>
           <button type='submit' className='btn submit-btn'>Submit</button>
         </form>
       </div>

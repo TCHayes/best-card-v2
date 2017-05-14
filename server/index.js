@@ -72,18 +72,19 @@ app.post('/api/users', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
   }
-
   if (!('username' in req.body)) {
     return res.status(422).json({message: 'Missing field: username'});
   }
 
-  let {username, password, firstName, lastName} = req.body;
+  let {username, password, firstName, lastName, email} = req.body;
 
   if (typeof username !== 'string') {
     return res.status(422).json({message: 'Incorrect field type: username'});
   }
 
   username = username.trim();
+  password = password.trim();
+  email = email.trim();
 
   if (username === '') {
     return res.status(422).json({message: 'Incorrect field length: username'});
@@ -97,10 +98,15 @@ app.post('/api/users', (req, res) => {
     return res.status(422).json({message: 'Incorrect field type: password'});
   }
 
-  password = password.trim();
-
   if (password === '') {
     return res.status(422).json({message: 'Incorrect field length: password'});
+  }
+
+  if (!(email)) {
+    return res.status(422).json({message: 'Missing field: email'});
+  }
+  if (email === '') {
+    return res.status(422).json({message: 'Incorrect field length: email'});
   }
 
   // check for existing user
@@ -122,6 +128,7 @@ app.post('/api/users', (req, res) => {
           password: hash,
           firstName: firstName,
           lastName: lastName,
+          email: email,
           cards: []
         })
     })

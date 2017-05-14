@@ -18,6 +18,7 @@ const userSchema = mongoose.Schema({
   firstName: {type:String, required:true},
   lastName: {type:String, required:true},
   password: {type:String, required:true},
+  email: {type:String, required:true},
   cards: [{
     name: String,
     categories: Object,
@@ -30,6 +31,7 @@ userSchema.methods.apiRepr = function() {
     firstName: this.firstName || '',
     lastName: this.lastName || '',
     cards: this.cards || '',
+    email: this.email || '',
   };
 };
 
