@@ -9,7 +9,6 @@ const {Card, User} = require('./models');
 const DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL ||
                        'mongodb://localhost/ccRecommendDb';
-const crypto = require('crypto');
 
 app.use(bodyParser.json());
 
@@ -187,33 +186,23 @@ app.delete('/api/users', (req, res) => {
 
 //--------------Password Reset Endpoints -------------------------------------->
 
-function generateToken(stringBase = 'base64') {
-  return new Promise((resolve, reject) => {
-    crypto.randomBytes(48, (err, buffer) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(buffer.toString(stringBase));
-      }
-    });
-  });
+const randomString = length => {
+    let text = "";
+    const possible = "abcdefghijklmnopqrstuvwxyz0123456789_-.";
+    for(let i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
 }
 
-app.post('/forgotpass', (req, res) => {
+app.put('/api/forgotpass', (req, res) => {
   if (!req.body) return res.status(400).json({message: 'No Request Body'});
   if (!req.body.email) return res.status(400).json({message: 'No Email in Request Body'});
 
-  let newToken = '';
-
-  async function handler(req, res) {
-    newToken = await generateToken();
-    console.log('newToken', newToken);
-  }
-
-  // let token = bcrypt.hash(`token${req.body.email}`, 10);
+  let token = randomString(25);
 
   return User
-  .update({ email: req.body.email }, { $set: { resetPassLink: newToken }}, function(error, feedback) {
+  .update({ email: req.body.email }, { $set: { resetPassLink: token }}, function(error, feedback) {
     if (error) return res.send(error);
     return res.send(feedback);
   })
