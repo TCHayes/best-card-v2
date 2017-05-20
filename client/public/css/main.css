@@ -13,6 +13,10 @@ body {
   background-color: #fafafa;
 }
 
+.hidden {
+  display: none;
+}
+
 .App {
   text-align: center;
 }
