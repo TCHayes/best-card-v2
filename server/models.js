@@ -14,15 +14,16 @@ const cardSchema = mongoose.Schema({
 });
 
 const userSchema = mongoose.Schema({
-  username: {type:String, required:true},
-  firstName: {type:String, required:true},
-  lastName: {type:String, required:true},
-  password: {type:String, required:true},
-  email: {type:String, required:true},
+  username: {type: String, required:true},
+  firstName: {type: String, required:true},
+  lastName: {type: String, required:true},
+  password: {type: String, required:true},
+  email: {type: String, required:true},
   cards: [{
     name: String,
     categories: Object,
   }],
+  resetPassLink: {type: String, default: ''}
 });
 
 userSchema.methods.apiRepr = function() {
