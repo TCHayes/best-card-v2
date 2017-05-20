@@ -24,6 +24,9 @@ export default (state=initialState, action) => {
   if (action.type === actions.FETCH_CARDS_FAILURE) {
     return {...state, error: action.error};
   }
+  if (action.type === actions.FETCH_FAILURE) {//TODO Redundant with above Fetch Failure
+    return {...state, error: action.error};
+  }
   if (action.type === actions.FETCH_USER_SUCCESS) {
     return {...state, userCards: action.cards, error: null};
   }
@@ -47,6 +50,10 @@ export default (state=initialState, action) => {
   }
   if (action.type === actions.ADD_USER_CARDS_SUCCESS) {
     console.log("Hello from ADD_USER_CARDS_SUCCESS reducer");
+    return state;
+  }
+  if (action.type === actions.PASS_RESET_REQ_SUCCESS) {
+    console.log("Hello from PASS_RESET_REQ_SUCCESS reducer");
     return state;
   }
   return state;
