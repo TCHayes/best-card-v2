@@ -46,14 +46,39 @@ export const addUserCardsSuccess = (data) => ({
 });
 
 export const PASS_RESET_REQ_SUCCESS = 'PASS_RESET_REQ_SUCCESS';
-export const passResetReqSuccess = (date) => ({
+export const passResetReqSuccess = (data) => ({
   type: PASS_RESET_REQ_SUCCESS,
 })
 
-export const sendResetPasswordEmail = (formData) => dispatch => {
-  return fetch('/forgotpass', {
+export const RESET_PASS_SUCCESS = 'RESET_PASS_SUCCESS';
+export const resetPassSuccess = (data) => ({
+  type: RESET_PASS_SUCCESS,
+})
+
+export const resetPassword = (formData) => dispatch => {
+  return fetch('/api/resetpass', {
     headers: new Headers({ 'Content-Type': 'application/json' }),
-    method: "POST",
+    method: "PUT",
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    dispatch(resetPassSuccess(data));
+  })
+  .catch(error => {
+    dispatch(fetchFailure(error));
+  })
+}
+
+export const sendResetPasswordEmail = (formData) => dispatch => {
+  return fetch('/api/forgotpass', {
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    method: "PUT",
     body: JSON.stringify(formData)
   })
   .then(response => {
