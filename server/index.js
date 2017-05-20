@@ -199,18 +199,30 @@ app.put('/api/forgotpass', (req, res) => {
   if (!req.body) return res.status(400).json({message: 'No Request Body'});
   if (!req.body.email) return res.status(400).json({message: 'No Email in Request Body'});
 
-  let token = randomString(25);
+  let token = randomString(40); //TODO THIS GENERATES A RANDOM, BUT NOT NECESSARILY UNIQUE STRING
 
   return User
   .update({ email: req.body.email }, { $set: { resetPassLink: token }}, function(error, feedback) {
     if (error) return res.send(error);
     return res.send(feedback);
   })
+                //TODO Nothing currently in place to expire token after set time
   // .then(() => {
   //   //send email with link including newToken
   // })
 })
 
+app.put('/api/resetpass', (req, res) => {
+  const {resetPassLink, newPassword} = req.body;
+  User.hashPassword(newPassword)
+  .then(hashedPass => {
+    return User
+    .update({resetPassLink}, { $set: { password: hashedPass, resetPassLink: '' }}, function(error, feedback) {
+      if (error) return res.send(error);
+      return res.send(feedback);
+    })
+  })
+})
 
 // Serve the built client
 app.use(express.static(path.resolve(__dirname, '../client/build')));
