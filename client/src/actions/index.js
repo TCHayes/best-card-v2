@@ -29,6 +29,12 @@ export const fetchUserFailure = (error) => ({
   error
 });
 
+export const FETCH_FAILURE = 'FETCH_FAILURE';
+export const fetchFailure = (error) => ({
+  type: FETCH_FAILURE,
+  error
+});
+
 export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
 export const addUserSuccess = (data) => ({
   type: ADD_USER_SUCCESS,
@@ -38,6 +44,31 @@ export const ADD_USER_CARDS_SUCCESS = 'ADD_USER_CARDS_SUCCESS';
 export const addUserCardsSuccess = (data) => ({
   type: ADD_USER_CARDS_SUCCESS,
 });
+
+export const PASS_RESET_REQ_SUCCESS = 'PASS_RESET_REQ_SUCCESS';
+export const passResetReqSuccess = (date) => ({
+  type: PASS_RESET_REQ_SUCCESS,
+})
+
+export const sendResetPasswordEmail = (formData) => dispatch => {
+  return fetch('/forgotpass', {
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    method: "POST",
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    dispatch(passResetReqSuccess(data));
+  })
+  .catch(error => {
+    dispatch(fetchFailure(error));
+  })
+}
 
 export const fetchUser = () => dispatch => {
   const headers = cookie.load('headers');
