@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../public/css/main.css';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import cookie from 'react-cookie';
 import basic from 'basic-authorization-header';
 import * as actions from '../actions';
@@ -32,6 +32,7 @@ export class Login extends React.Component {
           <input type='text' id="username" ref={ref => this.username = ref} placeholder="Username"></input>
           <label htmlFor="password">Password:</label>
           <input type='password' id="password" ref={ref => this.password = ref} placeholder="Password"></input>
+          <Link to="/forgotpass" className='forgot-pass-link'>Forgot Password?</Link>
           <button type='submit' className='btn submit-btn'>Submit</button>
         </form>
       </div>
