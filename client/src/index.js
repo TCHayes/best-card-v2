@@ -15,6 +15,7 @@ import Login from './components/login';
 import cookie from 'react-cookie';
 import CardChooser from './components/card-chooser';
 import ForgotPass from './components/forgot-pass';
+import ResetPass from './components/reset-pass';
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk));
 
@@ -34,6 +35,7 @@ const routes =(
       <Route path='/login' component={Login} />
       <Route path='/allCards' component={CardChooser} />
       <Route path='/forgotpass' component={ForgotPass} />
+      <Route path='/resetpass/:resetString' component={ResetPass}/>
     </Route>
   </Router>
 );
