@@ -54,10 +54,12 @@ export default (state=initialState, action) => {
   }
   if (action.type === actions.PASS_RESET_REQ_SUCCESS) {
     console.log("Hello from PASS_RESET_REQ_SUCCESS reducer");
+    console.log(action);
     return state;
   }
   if (action.type === actions.RESET_PASS_SUCCESS) {
     console.log("Hello from RESET_PASS_SUCCESS reducer");
+    console.log(action);
     return state;
   }
   return state;

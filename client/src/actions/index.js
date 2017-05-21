@@ -48,11 +48,13 @@ export const addUserCardsSuccess = (data) => ({
 export const PASS_RESET_REQ_SUCCESS = 'PASS_RESET_REQ_SUCCESS';
 export const passResetReqSuccess = (data) => ({
   type: PASS_RESET_REQ_SUCCESS,
+  data,
 })
 
 export const RESET_PASS_SUCCESS = 'RESET_PASS_SUCCESS';
 export const resetPassSuccess = (data) => ({
   type: RESET_PASS_SUCCESS,
+  data,
 })
 
 export const resetPassword = (formData) => dispatch => {

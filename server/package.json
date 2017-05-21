@@ -17,5 +17,8 @@
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
   }
 }

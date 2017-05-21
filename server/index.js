@@ -6,9 +6,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 const {Card, User} = require('./models');
+const {sendEmail} = require('./emailer');
 const DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL ||
                        'mongodb://localhost/ccRecommendDb';
+const APP_URL_BASE = process.env.APP_URL_BASE || 'http://localhost:8080';
 
 app.use(bodyParser.json());
 
@@ -199,17 +201,23 @@ app.put('/api/forgotpass', (req, res) => {
   if (!req.body) return res.status(400).json({message: 'No Request Body'});
   if (!req.body.email) return res.status(400).json({message: 'No Email in Request Body'});
 
-  let token = randomString(40); //TODO THIS GENERATES A RANDOM, BUT NOT NECESSARILY UNIQUE STRING
+  const token = randomString(40); //TODO THIS GENERATES A RANDOM, BUT NOT NECESSARILY UNIQUE STRING
+  const emailData = {
+    to: req.body.email,
+    subject: "BestCard Password Reset Instructions",
+    text: `Please use the following link for instructions to reset your password: ${APP_URL_BASE}/resetpass/${token}`,
+    html: `<p>Please use the link below for instructions to reset your password.</p><p>${APP_URL_BASE}/resetpass/${token}</p>`
+  };
 
   return User
   .update({ email: req.body.email }, { $set: { resetPassLink: token }}, function(error, feedback) {
+    //TODO Nothing currently in place to expire token after set time
     if (error) return res.send(error);
-    return res.send(feedback);
+    else {
+      sendEmail(emailData);
+      return res.status(200).json({message: `Email has been sent to ${req.body.email}`});
+    }
   })
-                //TODO Nothing currently in place to expire token after set time
-  // .then(() => {
-  //   //send email with link including newToken
-  // })
 })
 
 app.put('/api/resetpass', (req, res) => {
