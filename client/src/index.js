@@ -11,7 +11,7 @@ import CategoryList from './components/category-list';
 import Recommendation from './components/Recommendation';
 import Welcome from './components/welcome';
 import Signup from './components/signup';
-import Login from './components/login';
+// import Login from './components/login';
 import cookie from 'react-cookie';
 import CardChooser from './components/card-chooser';
 import ForgotPass from './components/forgot-pass';
@@ -32,7 +32,7 @@ const routes =(
       <Route path='/category/:selection' component={Recommendation} onEnter={checkAuth}/>
       <Route path='/welcome' component={Welcome} />
       <Route path='/signup' component={Signup} />
-      <Route path='/login' component={Login} />
+      {/* <Route path='/login' component={Login} /> */}
       <Route path='/allCards' component={CardChooser} />
       <Route path='/forgotpass' component={ForgotPass} />
       <Route path='/resetpass/:resetString' component={ResetPass}/>

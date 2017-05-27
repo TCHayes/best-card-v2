@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 /*
 Color palette #03 from: https://designschool.canva.com/blog/brand-color-palette/
 EDFAFD
@@ -11,6 +13,9 @@ body {
   /*background: linear-gradient(130deg, #1aa9e2 0%, #103359 100%, #303030 90%);
   color: white;*/
   background-color: #fafafa;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .hidden {
@@ -32,12 +37,68 @@ body {
   margin: 0;
 }
 
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+/*.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}*/
+
+.form {
+  font-family: "Roboto", sans-serif;
+}
+.form input {
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  outline: 0;
+  background: #f2f2f2;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #005f83;
+}
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #005f83;
+  width: 80%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.forgot-pass-link {
+  display: block;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
 }
 
-input {
+/*input {
   display: block;
   border: 1px solid #2A93D5;
   color: #135589;
@@ -48,7 +109,7 @@ input {
   width: 50%;
   border-radius: 5px;
   background: #EDFAFD;
-}
+}*/
 
 ::placeholder {
   text-align: center;
@@ -148,10 +209,25 @@ label {
 /*This styling below applies only to screens with more than 400px:*/
 @media screen and (min-width: 400px) {
 
-  input {
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .form button:hover,.form button:active,.form button:focus {
+    background: #43A047;
+  }
+
+  /*input {
     width: 150px;
     font-size: 20px;
-  }
+  }*/
 
   .CategoryList{
     margin-left: auto;
