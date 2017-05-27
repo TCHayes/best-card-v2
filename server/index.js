@@ -189,12 +189,12 @@ app.delete('/api/users', (req, res) => {
 //--------------Password Reset Endpoints -------------------------------------->
 
 const randomString = length => {
-    let text = "";
-    const possible = "abcdefghijklmnopqrstuvwxyz0123456789_-.";
-    for(let i = 0; i < length; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return text;
+  let text = "";
+  const possible = "abcdefghijklmnopqrstuvwxyz0123456789_-.";
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
 }
 
 app.put('/api/forgotpass', (req, res) => {
