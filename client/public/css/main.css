@@ -130,15 +130,14 @@ label {
 }
 
 .btn {
-  border: 1px solid #5ee9ff;
-  border-radius: 2px;
+  border: 0;
   margin: 10px auto;
   width: 70%;
   height: 90px;
-  background-color: #EDFAFD;
+  background-color: #005f83;
   font-size: 1.5em;
   text-decoration: none;
-  color: #135589;
+  color: #fafafa;
 }
 
 .card-chooser-container {
