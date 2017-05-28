@@ -28,29 +28,48 @@
   text-align: left;
 }
 
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2px 16px;
+  height: 45px;
+  background-color: #005f83;
+  color: white;
+}
+
 .modal-got-it {
-  
+  margin: auto;
+  text-decoration: none;
+}
+
+.modal-got-it:hover {
+  text-decoration: underline;
+}
+
+.modal-got-it:visited {
+  color: white;
 }
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
 }
 
 @keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
 }
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 @keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 /*The styling below applies only to screens with more than 400px:*/

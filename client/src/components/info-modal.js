@@ -26,7 +26,9 @@ export function Modal(props) {
             see our <Link to="/faq" className='link'>FAQ page</Link>.</p>
           <p>If you have any questions or suggestions for improvements, please
           let us know: BestCardInfo@gmail.com</p>
-          <a href="#" className='modal-got-it' onClick={() => props.dispatch(actions.toggleInfoModal())}>Got It!</a>
+        </div>
+        <div className="modal-footer">
+          <a href="#" className='modal-got-it' onClick={() => props.dispatch(actions.toggleInfoModal())}>Ok, let's go!</a>
         </div>
       </div>
     </div>
