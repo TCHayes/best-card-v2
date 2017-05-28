@@ -38,7 +38,13 @@ body {
 }
 
 .login-page {
-  width: 360px;
+  width: 90%;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.signup-page {
+  width: 90%;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -63,7 +69,7 @@ body {
   padding: 15px;
   outline: 0;
   background: #f2f2f2;
-  width: 80%;
+  width: 60%;
   box-sizing: border-box;
   font-size: 14px;
   color: #005f83;
@@ -72,7 +78,7 @@ body {
   text-transform: uppercase;
   outline: 0;
   background: #005f83;
-  width: 80%;
+  width: 60%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -87,6 +93,12 @@ body {
 .form .message a {
   color: #4CAF50;
   text-decoration: none;
+}
+
+.forgot-pass-page {
+  width: 90%;
+  padding: 8% 0 0;
+  margin: auto;
 }
 
 .forgot-pass-link {
@@ -190,9 +202,9 @@ label {
   color: #EDFAFD;
 }
 
-.submit-btn {
+/*.submit-btn {
   margin-top: 35px;
-}
+}*/
 
 .logout {
   margin-top: 100px;
@@ -207,7 +219,7 @@ label {
 }
 
 /*This styling below applies only to screens with more than 400px:*/
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 420px) {
 
   .form {
     position: relative;
@@ -237,7 +249,7 @@ label {
 
   .btn{
     width: 320px;
-    height: 100px;
+    height: 90px;
   }
 
   .btn:hover{

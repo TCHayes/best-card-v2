@@ -34,24 +34,24 @@ export class Signup extends React.Component {
   render(){
     return (
       <div className='signup-page'>
-        <form onSubmit={this.onSubmit}>
-          <label htmlFor="firstName">First Name:</label>
+        <form onSubmit={this.onSubmit} className='form'>
+          {/* <label htmlFor="firstName">First Name:</label> */}
           <input type='text' id="firstName"
                             ref={ref => this.firstName = ref}
                             placeholder="First name"></input>
-          <label htmlFor="lastName">Last Name:</label>
+          {/* <label htmlFor="lastName">Last Name:</label> */}
           <input type='text' id="lastName"
                             ref={ref => this.lastName = ref}
                             placeholder="Last name"></input>
-          <label htmlFor="username">Username:</label>
+          {/* <label htmlFor="username">Username:</label> */}
           <input type='text' id="username"
                             ref={ref => this.username = ref}
                             placeholder="Username"></input>
-          <label htmlFor="password">Password:</label>
+          {/* <label htmlFor="password">Password:</label> */}
           <input type='password' id="password"
                             ref={ref => this.password = ref}
                             placeholder="Password"></input>
-          <label htmlFor="email">Email:</label>
+          {/* <label htmlFor="email">Email:</label> */}
           <input type='email' id="email"
                             ref={ref => this.email = ref}
                             placeholder="Email"></input>
