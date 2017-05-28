@@ -8,7 +8,7 @@ const initialState = {
   username: '',
   userCards: [],
   error: null,
-  showInfoModal: true,
+  showInfoModal: false,
 }
 
 export default (state=initialState, action) => {

@@ -11,6 +11,6 @@ export default function CategoryButton(props) {
   });
 
   return (
-    <ul>{categories}</ul>
+    <ul className='categories-list'>{categories}</ul>
   );
 }

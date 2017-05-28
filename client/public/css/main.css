@@ -22,15 +22,31 @@ body {
   display: none;
 }
 
-.App {
+.app {
   text-align: center;
 }
 
-.App-header {
+.app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-color: #005f83;
   height: 25px;
   padding: 10px;
   color: white;
+}
+
+.app-header-content {
+  /*width: 100%;*/
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.app-header-content i {
+  display: flex;
+  align-self: flex-end;
 }
 
 .app-title {
@@ -104,7 +120,7 @@ body {
   display: block;
 }
 
-ul {
+.categories-list {
   list-style: none;
   padding-left: 0;
 }

@@ -1,46 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { Link } from 'react-router';
 
 export function Modal(props) {
   return (
     <div className='modal'>
-      <div className='overlay-content'>
+      <div className='modal-content'>
         <h3>Welcome to BestCard!</h3>
-        <div>
+        <div className='modal-body'>
           <p>We're here to help you maximize your credit card rewards by
           always picking the best card for each purchase.</p>
-          <ul>
-            <li>
-              Different cards offer different rewards rates for certain
-              categories of purchases.
-            </li>
-            <li>Many of the most popular (and rewarding!) cards change their
-              categories each quarter, and some change sporadically.
-            </li>
-            <li>
-              After a quick sign up process in which you'll tell us which
-              cards you own, the rest of the app experience is simple:
-              <ul>
-                <li>
-                  Whenever you are about to make a purchase, simply load
-                  BestCard and select the category of your purchase.
-                </li>
-                <li>
-                  BestCard will respond with your card (or multiple cards if there's a tie)
-                  which will give you the most rewards for that purchase.
-                </li>
-                <li>
-                  Whenever you get a new card or get rid of an existing card, let
-                  us know and we'll update our recommendations to reflect your
-                  current wallet.
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <p>Credit card rewards are the best they've ever been, but keeping
+          track of the details can be burdensome. Different cards offer
+          different rewards rates for certain categories of purchases. Many of
+          the most popular - and rewarding - cards change their categories each
+          quarter, and some change sporadically.</p>
+          <p>With BestCard, just tell us which cards you have, and next time
+          you're going to make a purchase, check the app to see which of your
+          card(s) will give you the most rewards.</p>
+          <p>For details on how we calculate the percentages for each card, and
+            further information about how we determine which cards to use, please
+            see our <Link to="/faq" className='link'>FAQ page</Link>.</p>
           <p>If you have any questions or suggestions for improvements, please
           let us know: BestCardInfo@gmail.com</p>
-          <a href="#" onClick={() => props.dispatch(actions.toggleInfoModal())}>Got It!</a>
+          <a href="#" className='modal-got-it' onClick={() => props.dispatch(actions.toggleInfoModal())}>Got It!</a>
         </div>
       </div>
     </div>
