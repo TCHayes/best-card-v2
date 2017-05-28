@@ -31,8 +31,8 @@ export class Login extends React.Component {
           <input type='text' id="username" ref={ref => this.username = ref} placeholder="username"></input>
           <input type='password' id="password" ref={ref => this.password = ref} placeholder="password"></input>
           <Link to="/forgotpass" className='forgot-pass-link message'>Forgot Password?</Link>
-          <p>Not registered? <Link to="/signup" className='message'>Create an account</Link></p>
           <button type='submit' className='btn submit-btn'>Submit</button>
+          <p>Not registered? <Link to="/signup" className='message'>Create an account</Link></p>
         </form>
       </div>
     )
