@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Modal from './components/info-modal';
 import '../public/css/main.css';
+import '../public/css/modal.css';
+import * as actions from './actions/index';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleInfo = this.toggleInfo.bind(this);
+  }
+
+  toggleInfo() {
+    this.props.dispatch(actions.toggleInfoModal());
+  }
 
   render() {
+    const appContent = this.props.showInfoModal ? <Modal /> : this.props.children
     return (
       <div className="App">
         <div className="App-header">
           <h2 className='app-title'>BestCard</h2>
+          <button onClick={this.toggleInfo}>Info</button>
         </div>
-        {this.props.children}
+        {appContent}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  showInfoModal: state.showInfoModal,
+})
+
+export default connect(mapStateToProps)(App);

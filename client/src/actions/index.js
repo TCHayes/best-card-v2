@@ -5,6 +5,11 @@ export const logout = () => ({
   type: LOGOUT,
 });
 
+export const TOGGLE_INFO_MODAL = 'TOGGLE_INFO_MODAL';
+export const toggleInfoModal = () => ({
+    type: TOGGLE_INFO_MODAL
+});
+
 export const TOGGLE_CARD = 'TOGGLE_CARD';
 export const toggleCard = (cardIndex) => ({
   type: TOGGLE_CARD,
