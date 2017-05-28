@@ -37,7 +37,6 @@ body {
 }
 
 .app-header-content {
-  /*width: 100%;*/
   max-width: 400px;
   display: flex;
   flex-direction: row;
@@ -64,17 +63,6 @@ body {
   padding: 8% 0 0;
   margin: auto;
 }
-
-/*.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}*/
 
 .form {
   font-family: "Roboto", sans-serif;
@@ -124,19 +112,6 @@ body {
   list-style: none;
   padding-left: 0;
 }
-
-/*input {
-  display: block;
-  border: 1px solid #2A93D5;
-  color: #135589;
-  height: 50px;
-  font-size: 30px;
-  margin: 5px auto;
-  padding: 5px 20px;
-  width: 50%;
-  border-radius: 5px;
-  background: #EDFAFD;
-}*/
 
 ::placeholder {
   text-align: center;
@@ -217,10 +192,6 @@ label {
   color: #EDFAFD;
 }
 
-/*.submit-btn {
-  margin-top: 35px;
-}*/
-
 .logout {
   margin-top: 100px;
   border: 2px solid #2A93D5;
@@ -250,11 +221,6 @@ label {
   .form button:hover,.form button:active,.form button:focus {
     background: #43A047;
   }
-
-  /*input {
-    width: 150px;
-    font-size: 20px;
-  }*/
 
   .CategoryList{
     margin-left: auto;

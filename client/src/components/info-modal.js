@@ -5,10 +5,12 @@ import { Link } from 'react-router';
 
 export function Modal(props) {
   return (
-    <div className='modal'>
-      <div className='modal-content'>
-        <h3>Welcome to BestCard!</h3>
-        <div className='modal-body'>
+    <div className="modal">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h3>Welcome to BestCard!</h3>
+        </div>
+        <div className="modal-body">
           <p>We're here to help you maximize your credit card rewards by
           always picking the best card for each purchase.</p>
           <p>Credit card rewards are the best they've ever been, but keeping
@@ -30,9 +32,5 @@ export function Modal(props) {
     </div>
   );
 }
-
-// const mapStateToProps = state => ({
-//   showInfoModal: state.showInfoModal,
-// })
 
 export default connect()(Modal);
