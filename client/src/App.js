@@ -24,8 +24,8 @@ class App extends Component {
         <div className="app-header">
           <div className='app-header-content'>
             <h2 className='app-title'>BestCard</h2>
-            <i className="fa fa-info-circle" aria-hidden="true" onClick={this.toggleInfo}></i>
           </div>
+          <i className="fa fa-info-circle info-btn" aria-hidden="true" onClick={this.toggleInfo}></i>
         </div>
         {appContent}
       </div>
