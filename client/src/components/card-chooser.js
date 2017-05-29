@@ -38,7 +38,7 @@ export class CardChooser extends React.Component {
                                                           toggled={card.toggled}
                                                           index={index}/>)
     return (
-      <div>
+      <div className='card-chooser-page'>
         <h3 className='info-text'>Please Select Your Cards</h3>
         <div className='card-chooser-container'>
           {cards}

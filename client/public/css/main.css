@@ -46,6 +46,7 @@ body {
 
 .app-header i {
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .app-title {
@@ -146,10 +147,17 @@ label {
   color: #fafafa;
 }
 
+.card-chooser-page {
+  display: flex;
+  flex-flow: column wrap;
+  align-self: center;
+}
+
 .card-chooser-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-self: center;
+  max-width: 600px;
 }
 
 .card {
@@ -222,7 +230,7 @@ label {
   }
 
   .form button:hover,.form button:active,.form button:focus {
-    background: #43A047;
+    background: #005472;
   }
 
   .CategoryList{
