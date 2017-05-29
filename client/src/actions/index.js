@@ -104,7 +104,6 @@ export const sendResetPasswordEmail = (formData) => dispatch => {
 
 export const fetchUser = () => dispatch => {
   const headers = cookie.load('headers');
-  console.log(headers);
   return fetch(`/api/users/?token=${cookie.load('token')}`,
               {headers: headers}).then(response => {
       if (!response.ok) {
@@ -113,10 +112,11 @@ export const fetchUser = () => dispatch => {
       return response.json();
   })
   .then(data => {
-      dispatch(fetchUserSuccess(data.cards));
+    dispatch(setUsername(data.username));
+    dispatch(fetchUserSuccess(data.cards));
   })
   .catch(error => {
-      dispatch(fetchUserFailure(error));
+    dispatch(fetchUserFailure(error));
   })
 }
 
