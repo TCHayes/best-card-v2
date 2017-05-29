@@ -23,7 +23,7 @@ export function Modal(props) {
           card(s) will give you the most rewards.</p>
           <p>For details on how we calculate the percentages for each card, and
             further information about how we determine which cards to use, please
-            see our <Link to="/faq" className='link'>FAQ page</Link>.</p>
+            see our <Link to="/faq" className='link'>FAQ page</Link> (coming soon!).</p>
           <p>If you have any questions or suggestions for improvements, please
           let us know: BestCardInfo@gmail.com</p>
         </div>
