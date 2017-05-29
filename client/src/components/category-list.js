@@ -14,10 +14,6 @@ export class CategoryList extends React.Component {
     this.props.dispatch(actions.fetchUser());
   }
 
-  edit() {
-    browserHistory.push('/allCards');
-  }
-
   render() {
     if (!this.props.cards.length) return <div />
     const categories = Object.keys(this.props.cards[0].categories);
@@ -25,7 +21,6 @@ export class CategoryList extends React.Component {
       <div className='CategoryList'>
         <h3>Select purchase category</h3>
         <CategoryButton categories={categories} />
-        <button className='btn edit-cards' onClick={this.edit}>Edit Cards</button>
       </div>
     )
   }

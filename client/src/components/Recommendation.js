@@ -29,7 +29,6 @@ function mapStateToProps(state, props) {
 export class Recommendation extends React.Component {
   constructor(props) {
     super(props);
-    this.logout = this.logout.bind(this);
   }
 
   render() {
