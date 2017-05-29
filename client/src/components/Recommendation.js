@@ -32,10 +32,6 @@ export class Recommendation extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
-  logout(){
-    this.props.dispatch(actions.logout());
-  }
-
   render() {
     const {selection} = this.props.params;
     const {bestPercent} = this.props;
@@ -49,7 +45,6 @@ export class Recommendation extends React.Component {
         </div>
         {cards}
         <Link to="/" ><button className='btn back-btn'>Back</button></Link>
-        <button className='btn logout' onClick={this.logout}>Logout</button>
       </div>
     )
   }

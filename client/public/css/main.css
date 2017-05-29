@@ -176,9 +176,10 @@ label {
 
 .back-btn {
   margin-top: 10px;
-  border: 2px solid #2A93D5;
-  border-radius: 5px;
-  width: 80%;
+  border: 1px solid #2A93D5;
+  /*border-radius: 5px;*/
+  /*width: 80%;*/
+  /*border: 0;*/
   height: 30px;
   background-color: #EDFAFD;
   font-size: 1em;

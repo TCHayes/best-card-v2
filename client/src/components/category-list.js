@@ -8,15 +8,10 @@ import { browserHistory } from 'react-router';
 export class CategoryList extends React.Component {
   constructor(props) {
     super(props);
-    this.logout = this.logout.bind(this);
   }
 
   componentDidMount() {
     this.props.dispatch(actions.fetchUser());
-  }
-
-  logout(){
-    this.props.dispatch(actions.logout());
   }
 
   edit() {
@@ -31,7 +26,6 @@ export class CategoryList extends React.Component {
         <h3>Select purchase category</h3>
         <CategoryButton categories={categories} />
         <button className='btn edit-cards' onClick={this.edit}>Edit Cards</button>
-        <button className='logout' onClick={this.logout}>Logout</button>
       </div>
     )
   }

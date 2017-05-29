@@ -32,7 +32,6 @@ const routes =(
       <Route path='/category/:selection' component={Recommendation} onEnter={checkAuth}/>
       <Route path='/welcome' component={Welcome} />
       <Route path='/signup' component={Signup} />
-      {/* <Route path='/login' component={Login} /> */}
       <Route path='/allCards' component={CardChooser} />
       <Route path='/forgotpass' component={ForgotPass} />
       <Route path='/resetpass/:resetString' component={ResetPass}/>
