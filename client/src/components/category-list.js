@@ -3,12 +3,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import CategoryButton from './category-button';
 import '../../public/css/main.css'
-import { browserHistory } from 'react-router';
 
 export class CategoryList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.dispatch(actions.fetchUser());

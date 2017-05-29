@@ -37,14 +37,14 @@ class App extends Component {
       </div>
     ) : <div className='nav'><i className="fa fa-info-circle info-btn" aria-hidden="true"
       onClick={this.toggleInfo}></i></div>;
-      
+
     return (
       <div className="app">
         <div className="app-header">
-          <h2 className='app-title'>BestCard</h2>
           <div className='app-header-content'>
+            <h2 className='app-title'>BestCard</h2>
+            {navIcons}
           </div>
-          {navIcons}
         </div>
         {appContent}
       </div>

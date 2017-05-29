@@ -43,7 +43,7 @@ export class CardChooser extends React.Component {
         <div className='card-chooser-container'>
           {cards}
         </div>
-        <button className='btn submit-cards' onClick={this.submitCards}>Submit</button>
+        <button className='btn submit-btn' onClick={this.submitCards}>Submit</button>
       </div>
     )
   }

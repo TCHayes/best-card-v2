@@ -29,6 +29,7 @@ body {
 .app-header {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background-color: #005f83;
   height: 25px;
   padding: 10px;
@@ -37,10 +38,10 @@ body {
 
 .app-header-content {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .app-header i {
@@ -95,8 +96,8 @@ body {
   cursor: pointer;
 }
 .form .message {
-  color: #b3b3b3;
-  font-size: 12px;
+  color: #a3a3a3;
+  font-size: 14px;
 }
 .form .message a {
   color: #4CAF50;
@@ -120,7 +121,7 @@ body {
 
 ::placeholder {
   text-align: center;
-  color: #AED9DA;
+  color: #005f83;
 }
 
 label {
@@ -152,13 +153,14 @@ label {
 }
 
 .card {
-  border: 2px solid #2A93D5;
-  border-radius: 5px;
+  border: 1px solid #2A93D5;
+  border-radius: 4px;
   margin: 10px auto;
   width: 40%;
-  background-color: #EDFAFD;
+  max-width: 140px;
+  background-color: #005f83;
   text-decoration: none;
-  color: #135589;
+  color: #fafafa;
 }
 
 .card-text {
@@ -166,7 +168,7 @@ label {
 }
 
 .card-toggled {
-  background-color: #EDFAFD;
+  background-color: #005f83;
   border-color: #b3ffa8;
   box-shadow: 0px 0px 10px 7px #2A93D5;
 }
@@ -191,7 +193,6 @@ label {
 
 .submit-cards {
   background-color: #2A93D5;
-  color: #EDFAFD;
 }
 
 .logout {

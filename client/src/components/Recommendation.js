@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RecommendedCard from './recommended-card';
 import { Link } from 'react-router';
-import * as actions from '../actions/index';
 import '../../public/css/main.css';
 
 function mapStateToProps(state, props) {
@@ -27,9 +26,6 @@ function mapStateToProps(state, props) {
 }
 
 export class Recommendation extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const {selection} = this.props.params;
