@@ -41,6 +41,7 @@
 .modal-got-it {
   margin: auto;
   text-decoration: none;
+  color: inherit;
 }
 
 .modal-got-it:hover {
