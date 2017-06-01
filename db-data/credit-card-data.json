@@ -4,6 +4,7 @@
  	"groceries": 0.075,
  	"restaurants": 0.015,
  	"travel": 0.015,
+  "Amazon": 0.015,
  	"other": 0.015
  }
 }
@@ -13,6 +14,7 @@
  	"groceries": 0.0225,
  	"restaurants": 0.0225,
  	"travel": 0.0225,
+  "Amazon": 0.0225,
  	"other": 0.0225
  }
 }
@@ -22,6 +24,7 @@
  	"groceries": 0.06,
  	"restaurants": 0.01,
  	"travel": 0.01,
+  "Amazon": 0.01,
  	"other": 0.01
  }
 }
@@ -31,7 +34,18 @@
  	"groceries": 0.015,
  	"restaurants": 0.045,
  	"travel": 0.045,
+  "Amazon": 0.015,
  	"other": 0.015
+ }
+}
+{"name": "Chase Sapphire Preferred",
+ "categories": {
+ 	"gas": 0.0125,
+ 	"groceries": 0.0125,
+ 	"restaurants": 0.025,
+ 	"travel": 0.025,
+  "Amazon": 0.0125,
+ 	"other": 0.0125
  }
 }
 {"name": "Discover it",
@@ -40,7 +54,28 @@
  	"groceries": 0.01,
  	"restaurants": 0.01,
  	"travel": 0.01,
+  "Amazon": 0.01,
  	"other": 0.01
+ }
+}
+{"name": "Discover it Chrome",
+ "categories": {
+ 	"gas": 0.02,
+ 	"groceries": 0.01,
+ 	"restaurants": 0.02,
+ 	"travel": 0.01,
+  "Amazon": 0.01,
+ 	"other": 0.01
+ }
+}
+{"name": "Discover it Miles",
+ "categories": {
+ 	"gas": 0.015,
+ 	"groceries": 0.015,
+ 	"restaurants": 0.015,
+ 	"travel": 0.015,
+  "Amazon": 0.015,
+ 	"other": 0.015
  }
 }
 {"name": "Citi Double Cash",
@@ -49,6 +84,7 @@
  	"groceries": 0.02,
  	"restaurants": 0.02,
  	"travel": 0.02,
+  "Amazon": 0.02,
  	"other": 0.02
  }
 }
@@ -58,6 +94,7 @@
  	"groceries": 0.015,
  	"restaurants": 0.015,
  	"travel": 0.015,
+  "Amazon": 0.015,
  	"other": 0.015
  }
 }
@@ -67,7 +104,18 @@
  	"groceries": 0.02,
  	"restaurants": 0.02,
  	"travel": 0.02,
+  "Amazon": 0.02,
  	"other": 0.02
+ }
+}
+{"name": "Capital One VentureOne",
+ "categories": {
+ 	"gas": 0.0125,
+ 	"groceries": 0.0125,
+ 	"restaurants": 0.0125,
+ 	"travel": 0.0125,
+  "Amazon": 0.0125,
+ 	"other": 0.0125
  }
 }
 {"name": "Amex Blue Cash Everyday",
@@ -76,6 +124,172 @@
  	"groceries": 0.03,
  	"restaurants": 0.01,
  	"travel": 0.01,
+  "Amazon": 0.01,
  	"other": 0.01
  }
+}
+{
+  "name": "BankAmericard Cash Rewards",
+  "categories": {
+  	"gas": 0.03,
+  	"groceries": 0.02,
+  	"restaurants": 0.01,
+  	"travel": 0.01,
+    "Amazon": 0.01,
+  	"other": 0.01
+  }
+}
+{
+  "name": "BankAmericard Travel Rewards",
+  "categories": {
+  	"gas": 0.015,
+  	"groceries": 0.015,
+  	"restaurants": 0.015,
+  	"travel": 0.015,
+    "Amazon": 0.015,
+  	"other": 0.015
+  }
+}
+{
+  "name": "Capital One Journey Student Rewards",
+  "categories": {
+  	"gas": 0.0125,
+  	"groceries": 0.0125,
+  	"restaurants": 0.0125,
+  	"travel": 0.0125,
+    "Amazon": 0.0125,
+  	"other": 0.0125
+  }
+}
+{
+  "name": "Wells Fargo Cash Wise",
+  "categories": {
+  	"gas": 0.015,
+  	"groceries": 0.015,
+  	"restaurants": 0.015,
+  	"travel": 0.015,
+    "Amazon": 0.015,
+  	"other": 0.015
+  }
+}
+{
+  "name": "Barclaycard Arrival Plus World Elite",
+  "categories": {
+  	"gas": 0.021,
+  	"groceries": 0.021,
+  	"restaurants": 0.021,
+  	"travel": 0.021,
+    "Amazon": 0.021,
+  	"other": 0.021
+  }
+}
+{
+  "name": "Capital One Spark Business",
+  "categories": {
+  	"gas": 0.02,
+  	"groceries": 0.02,
+  	"restaurants": 0.02,
+  	"travel": 0.02,
+    "Amazon": 0.02,
+  	"other": 0.02
+  }
+}
+{
+  "name": "Chase Ink Business Cash",
+  "categories": {
+  	"gas": 0.03,
+  	"groceries": 0.015,
+  	"restaurants": 0.03,
+  	"travel": 0.015,
+    "Amazon": 0.015,
+  	"other": 0.015
+  }
+}
+{
+  "name": "Chase Ink Business Preferred",
+  "categories": {
+  	"gas": 0.015,
+  	"groceries": 0.015,
+  	"restaurants": 0.015,
+  	"travel": 0.045,
+    "Amazon": 0.015,
+  	"other": 0.015
+  }
+}
+{
+  "name": "Citi ThankYou Preferred Card for College Students",
+  "categories": {
+  	"gas": 0.01,
+  	"groceries": 0.01,
+  	"restaurants": 0.02,
+  	"travel": 0.01,
+    "Amazon": 0.01,
+  	"other": 0.01
+  }
+}
+{
+  "name": "Chase Amazon Prime Rewards",
+  "categories": {
+  	"gas": 0.02,
+  	"groceries": 0.01,
+  	"restaurants": 0.02,
+  	"travel": 0.01,
+    "Amazon": 0.05,
+  	"other": 0.01
+  }
+}
+{
+  "name": "Chase Amazon Rewards",
+  "categories": {
+  	"gas": 0.02,
+  	"groceries": 0.01,
+  	"restaurants": 0.02,
+  	"travel": 0.01,
+    "Amazon": 0.03,
+  	"other": 0.01
+  }
+}
+{
+  "name": "Barclaycard CashForward",
+  "categories": {
+  	"gas": 0.01575,
+  	"groceries": 0.01575,
+  	"restaurants": 0.01575,
+  	"travel": 0.01575,
+    "Amazon": 0.01575,
+  	"other": 0.01575
+  }
+}
+{
+  "name": "Amex Premier Rewards Gold",
+  "categories": {
+  	"gas": 0.02,
+  	"groceries": 0.02,
+  	"restaurants": 0.02,
+  	"travel": 0.03,
+    "Amazon": 0.01,
+  	"other": 0.01
+  }
+}
+{
+  "name": "Marriott Rewards Premier",
+  "categories": {
+  	"gas": 0.01,
+  	"groceries": 0.01,
+  	"restaurants": 0.02,
+  	"travel": 0.02,
+    "Amazon": 0.01,
+  	"other": 0.01
+  }
+}
+{
+  "name": "Citi Costco Anywhere",
+  "categories": {
+  	"gas": 0.04,
+  	"groceries": 0.01,
+  	"restaurants": 0.03,
+  	"travel": 0.03,
+    "Amazon": 0.01,
+  	"other": 0.01
+  }
 }
