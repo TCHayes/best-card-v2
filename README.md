@@ -15,9 +15,13 @@ Solution: BestCard allows a user to just select a purchase category, and receive
 The backend of this app is built on Node and Express, and uses MongoDB and Mongoose to store cards and users (there are two collections).
 
 ## Technology
-* HTML5
-* CSS3
 * JavaScript
 * React
 * Redux
+* Node
+* Express
+* MongoDB
 * React-Router
+* NodeMailer (for password reset emails)
+* HTML5
+* CSS3
