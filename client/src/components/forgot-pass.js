@@ -24,6 +24,9 @@ export class ForgotPass extends React.Component {
   render(){
     return (
       <div className='forgot-pass-page'>
+        <div className='back'>
+          <i className="fa fa-chevron-circle-left" aria-hidden="true" onClick={browserHistory.goBack}></i>
+        </div>
         <form onSubmit={this.onSubmit} className='form'>
           <label htmlFor="email">Please enter your email to receive password reset instructions:</label>
           <input type='email' id="email" ref={ref => this.email = ref} placeholder="Email"></input>

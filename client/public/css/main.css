@@ -59,6 +59,13 @@ body {
   flex-direction: row;
 }
 
+.back {
+  text-align: left;
+  margin: 10px auto;
+  max-width: 450px;
+  font-size: 34px;
+}
+
 .login-page {
   width: 90%;
   padding: 8% 0 0;
@@ -107,12 +114,13 @@ body {
 
 .forgot-pass-page {
   width: 90%;
-  padding: 8% 0 0;
+  padding: 0;
+  margin-top: 20px;
   margin: auto;
 }
 
 .forgot-pass-link {
-  display: block;
+  display: block; /* TODO this is wider than it should be; unintentional clicks */
 }
 
 .categories-list {
@@ -259,5 +267,11 @@ label {
 
   .logout {
     width: 80px;
+  }
+
+  .forgot-pass-page {
+    width: 90%;
+    padding: 2% 0 0;
+    margin: auto;
   }
 }
