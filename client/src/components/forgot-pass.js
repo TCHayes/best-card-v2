@@ -26,7 +26,7 @@ export class ForgotPass extends React.Component {
       <div className='forgot-pass-page'>
         <form onSubmit={this.onSubmit} className='form'>
           <label htmlFor="email">Please enter your email to receive password reset instructions:</label>
-          <input type='text' id="email" ref={ref => this.email = ref} placeholder="Email"></input>
+          <input type='email' id="email" ref={ref => this.email = ref} placeholder="Email"></input>
           <button type='submit' className='btn submit-btn'>Submit</button>
         </form>
         <div className={`reset-text ${this.state.resetText}`}>An email with

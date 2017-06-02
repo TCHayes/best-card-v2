@@ -29,7 +29,7 @@ class App extends Component {
 
   render() {
     const appContent = this.props.showInfoModal ? <Modal /> : this.props.children;
-    const navIcons = this.props.username ? (
+    const navIcons = this.props.email ? (
       <div className='nav'>
         <i className="fa fa-info-circle info-btn" aria-hidden="true" onClick={this.toggleInfo}></i>
         <i className="fa fa-credit-card" aria-hidden="true" onClick={this.edit}></i>
@@ -54,7 +54,7 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   showInfoModal: state.showInfoModal,
-  username: state.username,
+  email: state.email,
 })
 
 export default connect(mapStateToProps)(App);

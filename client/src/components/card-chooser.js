@@ -24,7 +24,7 @@ export class CardChooser extends React.Component {
     //remove toggled key before adding to DB
     filteredCards.forEach(card => {delete card.toggled});
     const formData = {
-      username: this.props.username,
+      email: this.props.email,
       cards: filteredCards
     }
     this.props.dispatch(actions.addUserCards(formData));
@@ -53,7 +53,7 @@ function mapStateToProps(state, props) {
   return {
     cards: state.cards,
     userCards: state.userCards,
-    username: state.username,
+    email: state.email,
   }
 }
 

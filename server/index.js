@@ -16,16 +16,16 @@ app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
 
-const strategy = new BasicStrategy(function(username, password, callback) {
+const strategy = new BasicStrategy(function(email, password, callback) {
 
   let user;
   User
-    .findOne({username: username})
+    .findOne({ email: email })
     .exec()
     .then(_user => {
       user = _user;
       if (!user) {
-        return callback(null, false, {message: 'Incorrect username'});
+        return callback(null, false, {message: 'Incorrect email'});
       }
       return user.validatePassword(password);
     })
@@ -58,7 +58,7 @@ app.get('/api/users', passport.authenticate('basic', {session: false}), (req, re
 
   // TODO what if there is no token?
   User
-    .find({username: req.query.token})
+    .find({ email: req.query.token})
     .exec()
     .then(userInfo => {
       res.json(userInfo[0]);
@@ -74,23 +74,14 @@ app.post('/api/users', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
   }
-  if (!('username' in req.body)) {
-    return res.status(422).json({message: 'Missing field: username'});
+  if (!('email' in req.body)) {
+    return res.status(422).json({message: 'Missing field: email'});
   }
 
-  let {username, password, firstName, lastName, email} = req.body;
+  let { email, password } = req.body;
 
-  if (typeof username !== 'string') {
-    return res.status(422).json({message: 'Incorrect field type: username'});
-  }
-
-  username = username.trim();
-  password = password.trim();
   email = email.trim();
-
-  if (username === '') {
-    return res.status(422).json({message: 'Incorrect field length: username'});
-  }
+  password = password.trim();
 
   if (!(password)) {
     return res.status(422).json({message: 'Missing field: password'});
@@ -113,12 +104,12 @@ app.post('/api/users', (req, res) => {
 
   // check for existing user
   return User
-    .find({username})
+    .find({ email })
     .count()
     .exec()
     .then(count => {
       if (count > 0) {
-        return res.status(422).json({message: 'username already taken'});
+        return res.status(422).json({message: 'an account with this email already exists'});
       }
       // if no existing user, hash password
       return User.hashPassword(password)
@@ -126,12 +117,9 @@ app.post('/api/users', (req, res) => {
     .then(hash => {
       return User
         .create({
-          username: username,
-          password: hash,
-          firstName: firstName,
-          lastName: lastName,
           email: email,
-          cards: []
+          password: hash,
+          cards: [],
         })
     })
     .then(user => {
@@ -151,14 +139,14 @@ app.put('/api/users', (req, res) => {
     return res.status(400).json({message: 'No request body'});
   }
 
-  if (!('username' in req.body)) {
-    return res.status(422).json({message: 'Missing field: username'});
+  if (!('email' in req.body)) {
+    return res.status(422).json({message: 'Missing field: email'});
   }
 
-  let {username, cards} = req.body;
+  let { email, cards } = req.body;
 
   return User
-    .update({ username: username }, { cards: cards }, function(error, feedback) {
+    .update({ email: email }, { cards: cards }, function(error, feedback) {
       if (error) return res.send(error);
       return res.send(feedback);
     })
@@ -168,22 +156,21 @@ app.put('/api/users', (req, res) => {
 
 app.delete('/api/users', (req, res) => {
   if (!req.body) return res.status(400).json({message: 'No Request Body'});
-  if (!('username' in req.body)) return res.status(422).json({message: 'Missing field: username'});
+  if (!('email' in req.body)) return res.status(422).json({message: 'Missing field: email'});
 
   return User
-    .find({username: req.body.username})
+    .find({ email: req.body.email})
     .count()
     .exec()
     .then(count => {
-      if (count === 0) return res.status(422).json({message: 'username not found'});
-      User.remove({username: req.body.username}, function (err) {
+      if (count === 0) return res.status(422).json({message: 'email not found'});
+      User.remove({ email: req.body.email}, function (err) {
         if (err) return console.error(err);
       });
       return res.status(204).json({message: 'User has been deleted.'});
     })
     .catch(err => res.status(500).json({message: 'Something went wrong'}));
 })
-
 
 
 //--------------Password Reset Endpoints -------------------------------------->

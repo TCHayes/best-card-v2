@@ -5,10 +5,10 @@ import { browserHistory } from 'react-router';
 
 const initialState = {
   cards: [],
-  username: '',
   userCards: [],
   error: null,
   showInfoModal: false,
+  email: '',
 }
 
 export default (state=initialState, action) => {
@@ -16,7 +16,7 @@ export default (state=initialState, action) => {
     cookie.remove('token');
     cookie.remove('headers');
     browserHistory.replace('/welcome');
-    return {...state, cards: [], username: '', userCards: [], error: null};
+    return {...state, cards: [], email: '', userCards: [], error: null};
   }
   if (action.type === actions.FETCH_CARDS_SUCCESS) {
     const togglableCards = action.cards.map((card) => ({...card, toggled: false}));
@@ -29,16 +29,16 @@ export default (state=initialState, action) => {
     return {...state, error: action.error};
   }
   if (action.type === actions.FETCH_USER_SUCCESS) {
-    return {...state, userCards: action.cards, error: null};
+    return {...state, email: action.email, userCards: action.cards, error: null};
   }
   if (action.type === actions.FETCH_USER_FAILURE) {
     cookie.remove('token');
     cookie.remove('headers');
     browserHistory.replace('/welcome');
-    return {...state, cards: [], username: '', userCards: [], error: action.error};
+    return {...state, cards: [], email: '', userCards: [], error: action.error};
   }
-  if (action.type === actions.SET_USERNAME) {
-    return {...state, username: action.username}
+  if (action.type === actions.SET_SESSION_EMAIL) {
+    return {...state, email: action.email};
   }
   if (action.type === actions.TOGGLE_CARD) {
     return update(state, {

@@ -7,37 +7,38 @@ export const logout = () => ({
 
 export const TOGGLE_INFO_MODAL = 'TOGGLE_INFO_MODAL';
 export const toggleInfoModal = () => ({
-    type: TOGGLE_INFO_MODAL
+    type: TOGGLE_INFO_MODAL,
 });
 
 export const TOGGLE_CARD = 'TOGGLE_CARD';
 export const toggleCard = (cardIndex) => ({
   type: TOGGLE_CARD,
-  target: cardIndex
+  target: cardIndex,
 });
 
-export const SET_USERNAME = 'SET_USERNAME';
-export const setUsername = (username) => ({
-  type: SET_USERNAME,
-  username: username
+export const SET_SESSION_EMAIL = 'SET_SESSION_EMAIL';
+export const setSessionEmail = (email) => ({
+  type: SET_SESSION_EMAIL,
+  email,
 });
 
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
-export const fetchUserSuccess = (data) => ({
+export const fetchUserSuccess = (user) => ({
   type: FETCH_USER_SUCCESS,
-  cards: data
+  cards: user.cards,
+  email: user.email,
 });
 
 export const FETCH_USER_FAILURE = 'FETCH_USER_FAILURE';
 export const fetchUserFailure = (error) => ({
   type: FETCH_USER_FAILURE,
-  error
+  error,
 });
 
 export const FETCH_FAILURE = 'FETCH_FAILURE';
 export const fetchFailure = (error) => ({
   type: FETCH_FAILURE,
-  error
+  error,
 });
 
 export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
@@ -111,9 +112,9 @@ export const fetchUser = () => dispatch => {
       }
       return response.json();
   })
-  .then(data => {
-    dispatch(setUsername(data.username));
-    dispatch(fetchUserSuccess(data.cards));
+  .then(user => {
+    dispatch(setSessionEmail(user.email));
+    dispatch(fetchUserSuccess(user));
   })
   .catch(error => {
     dispatch(fetchUserFailure(error));

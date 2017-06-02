@@ -11,7 +11,7 @@ export class CategoryList extends React.Component {
   }
 
   render() {
-    if (!this.props.cards.length) return <div />
+    if (!this.props.cards.length) return <div />                    //TODO This should redirect to either login or edit cards
     const categories = Object.keys(this.props.cards[0].categories);
     return (
       <div className='CategoryList'>
@@ -25,6 +25,7 @@ export class CategoryList extends React.Component {
 const mapStateToProps = (state, props) => ({
     cards: state.userCards,
     error: state.error,
+    email: state.email,
 });
 
 export default connect(mapStateToProps)(CategoryList);

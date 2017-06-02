@@ -11,7 +11,6 @@ import CategoryList from './components/category-list';
 import Recommendation from './components/Recommendation';
 import Welcome from './components/welcome';
 import Signup from './components/signup';
-// import Login from './components/login';
 import cookie from 'react-cookie';
 import CardChooser from './components/card-chooser';
 import ForgotPass from './components/forgot-pass';

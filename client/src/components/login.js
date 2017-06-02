@@ -14,10 +14,10 @@ export class Login extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const headers = {'Authorization': basic(this.username.value, this.password.value)};
-    cookie.save('token', this.username.value);
+    const headers = {'Authorization': basic(this.email.value, this.password.value)};
+    cookie.save('token', this.email.value);
     cookie.save('headers', headers);
-    this.props.dispatch(actions.setUsername(this.username.value));
+    this.props.dispatch(actions.setSessionEmail(this.email.value));
     this.props.dispatch(actions.fetchUser());
     this.props.dispatch(actions.fetchCards());
     const path = '/';
@@ -28,7 +28,7 @@ export class Login extends React.Component {
     return (
       <div className='login-page'>
         <form onSubmit={this.onSubmit} className='form'>
-          <input type='text' id="username" ref={ref => this.username = ref} placeholder="username"></input>
+          <input type='email' id="email" ref={ref => this.email = ref} placeholder="email"></input>
           <input type='password' id="password" ref={ref => this.password = ref} placeholder="password"></input>
           <Link to="/forgotpass" className='forgot-pass-link message'>Forgot Password?</Link>
           <button type='submit' className='btn submit-btn'>Submit</button>
