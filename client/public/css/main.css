@@ -121,8 +121,8 @@ body {
 }
 
 ::placeholder {
-  text-align: center;
-  color: #005f83;
+  text-align: left;
+  color: #aaaaaa;
 }
 
 label {
