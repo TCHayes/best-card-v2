@@ -38,7 +38,7 @@ export class Signup extends React.Component {
           <input type='password' id="password"
                             ref={ref => this.password = ref}
                             placeholder="Password"></input>
-          <button type='submit' className='btn submit-btn'>Submit</button>
+          <button type='submit' className='btn submit-btn'>SIGN UP</button>
         </form>
       </div>
     )

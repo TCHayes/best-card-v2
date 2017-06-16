@@ -16,7 +16,7 @@ export class CategoryList extends React.Component {
     const categories = Object.keys(this.props.cards[0].categories);
     return (
       <div className='CategoryList'>
-        <h3>Select purchase category</h3>
+        <h3>Which type of purchase are you making?</h3>
         <CategoryButton categories={categories} />
       </div>
     )

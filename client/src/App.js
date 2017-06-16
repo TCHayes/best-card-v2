@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import Modal from './components/info-modal';
 import '../public/css/main.css';
 import '../public/css/modal.css';
@@ -42,7 +42,7 @@ class App extends Component {
       <div className="app">
         <div className="app-header">
           <div className='app-header-content'>
-            <h2 className='app-title'>BestCard</h2>
+            <Link to="/" ><h2 className='app-title'>BestCard</h2></Link>
             {navIcons}
           </div>
         </div>

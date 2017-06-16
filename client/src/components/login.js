@@ -31,7 +31,7 @@ export class Login extends React.Component {
           <input type='email' id="email" ref={ref => this.email = ref} placeholder="email"></input>
           <input type='password' id="password" ref={ref => this.password = ref} placeholder="password"></input>
           <Link to="/forgotpass" className='forgot-pass-link message'>Forgot Password?</Link>
-          <button type='submit' className='btn submit-btn'>Submit</button>
+          <button type='submit' className='btn submit-btn'>LOG IN</button>
           <p>Not registered? <Link to="/signup" className='message'>Create an account</Link></p>
         </form>
       </div>
