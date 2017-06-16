@@ -44,6 +44,10 @@ body {
   justify-content: space-between;
 }
 
+.app-header a {
+  text-decoration: none;
+}
+
 .app-header i {
   margin: 0 5px;
   cursor: pointer;
@@ -51,12 +55,17 @@ body {
 
 .app-title {
   margin: 0;
+  color: white;
 }
 
 .app-header .nav {
-  padding-top: 5px;
   display: flex;
   flex-direction: row;
+  font-size: 24px;
+}
+
+.nav .fa {
+  margin-left: 15px;
 }
 
 .back {
