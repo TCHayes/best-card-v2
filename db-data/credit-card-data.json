@@ -4,7 +4,7 @@
  	"groceries": 0.075,
  	"restaurants": 0.015,
  	"travel": 0.015,
-  "Amazon": 0.015,
+  "amazon": 0.015,
  	"other": 0.015
  }
 }
@@ -14,7 +14,7 @@
  	"groceries": 0.0225,
  	"restaurants": 0.0225,
  	"travel": 0.0225,
-  "Amazon": 0.0225,
+  "amazon": 0.0225,
  	"other": 0.0225
  }
 }
@@ -24,7 +24,7 @@
  	"groceries": 0.06,
  	"restaurants": 0.01,
  	"travel": 0.01,
-  "Amazon": 0.01,
+  "amazon": 0.01,
  	"other": 0.01
  }
 }
@@ -34,7 +34,7 @@
  	"groceries": 0.015,
  	"restaurants": 0.045,
  	"travel": 0.045,
-  "Amazon": 0.015,
+  "amazon": 0.015,
  	"other": 0.015
  }
 }
@@ -44,7 +44,7 @@
  	"groceries": 0.0125,
  	"restaurants": 0.025,
  	"travel": 0.025,
-  "Amazon": 0.0125,
+  "amazon": 0.0125,
  	"other": 0.0125
  }
 }
@@ -54,7 +54,7 @@
  	"groceries": 0.01,
  	"restaurants": 0.01,
  	"travel": 0.01,
-  "Amazon": 0.01,
+  "amazon": 0.01,
  	"other": 0.01
  }
 }
@@ -64,7 +64,7 @@
  	"groceries": 0.01,
  	"restaurants": 0.02,
  	"travel": 0.01,
-  "Amazon": 0.01,
+  "amazon": 0.01,
  	"other": 0.01
  }
 }
@@ -74,7 +74,7 @@
  	"groceries": 0.015,
  	"restaurants": 0.015,
  	"travel": 0.015,
-  "Amazon": 0.015,
+  "amazon": 0.015,
  	"other": 0.015
  }
 }
@@ -84,7 +84,7 @@
  	"groceries": 0.02,
  	"restaurants": 0.02,
  	"travel": 0.02,
-  "Amazon": 0.02,
+  "amazon": 0.02,
  	"other": 0.02
  }
 }
@@ -94,7 +94,7 @@
  	"groceries": 0.015,
  	"restaurants": 0.015,
  	"travel": 0.015,
-  "Amazon": 0.015,
+  "amazon": 0.015,
  	"other": 0.015
  }
 }
@@ -104,7 +104,7 @@
  	"groceries": 0.02,
  	"restaurants": 0.02,
  	"travel": 0.02,
-  "Amazon": 0.02,
+  "amazon": 0.02,
  	"other": 0.02
  }
 }
@@ -114,7 +114,7 @@
  	"groceries": 0.0125,
  	"restaurants": 0.0125,
  	"travel": 0.0125,
-  "Amazon": 0.0125,
+  "amazon": 0.0125,
  	"other": 0.0125
  }
 }
@@ -124,7 +124,7 @@
  	"groceries": 0.03,
  	"restaurants": 0.01,
  	"travel": 0.01,
-  "Amazon": 0.01,
+  "amazon": 0.01,
  	"other": 0.01
  }
 }
@@ -135,7 +135,7 @@
   	"groceries": 0.02,
   	"restaurants": 0.01,
   	"travel": 0.01,
-    "Amazon": 0.01,
+    "amazon": 0.01,
   	"other": 0.01
   }
 }
@@ -146,7 +146,7 @@
   	"groceries": 0.015,
   	"restaurants": 0.015,
   	"travel": 0.015,
-    "Amazon": 0.015,
+    "amazon": 0.015,
   	"other": 0.015
   }
 }
@@ -157,7 +157,7 @@
   	"groceries": 0.0125,
   	"restaurants": 0.0125,
   	"travel": 0.0125,
-    "Amazon": 0.0125,
+    "amazon": 0.0125,
   	"other": 0.0125
   }
 }
@@ -168,7 +168,7 @@
   	"groceries": 0.015,
   	"restaurants": 0.015,
   	"travel": 0.015,
-    "Amazon": 0.015,
+    "amazon": 0.015,
   	"other": 0.015
   }
 }
@@ -179,7 +179,7 @@
   	"groceries": 0.021,
   	"restaurants": 0.021,
   	"travel": 0.021,
-    "Amazon": 0.021,
+    "amazon": 0.021,
   	"other": 0.021
   }
 }
@@ -190,7 +190,7 @@
   	"groceries": 0.02,
   	"restaurants": 0.02,
   	"travel": 0.02,
-    "Amazon": 0.02,
+    "amazon": 0.02,
   	"other": 0.02
   }
 }
@@ -201,7 +201,7 @@
   	"groceries": 0.015,
   	"restaurants": 0.03,
   	"travel": 0.015,
-    "Amazon": 0.015,
+    "amazon": 0.015,
   	"other": 0.015
   }
 }
@@ -212,7 +212,7 @@
   	"groceries": 0.015,
   	"restaurants": 0.015,
   	"travel": 0.045,
-    "Amazon": 0.015,
+    "amazon": 0.015,
   	"other": 0.015
   }
 }
@@ -223,7 +223,7 @@
   	"groceries": 0.01,
   	"restaurants": 0.02,
   	"travel": 0.01,
-    "Amazon": 0.01,
+    "amazon": 0.01,
   	"other": 0.01
   }
 }
@@ -234,7 +234,7 @@
   	"groceries": 0.01,
   	"restaurants": 0.02,
   	"travel": 0.01,
-    "Amazon": 0.05,
+    "amazon": 0.05,
   	"other": 0.01
   }
 }
@@ -245,7 +245,7 @@
   	"groceries": 0.01,
   	"restaurants": 0.02,
   	"travel": 0.01,
-    "Amazon": 0.03,
+    "amazon": 0.03,
   	"other": 0.01
   }
 }
@@ -256,7 +256,7 @@
   	"groceries": 0.01575,
   	"restaurants": 0.01575,
   	"travel": 0.01575,
-    "Amazon": 0.01575,
+    "amazon": 0.01575,
   	"other": 0.01575
   }
 }
@@ -267,7 +267,7 @@
   	"groceries": 0.02,
   	"restaurants": 0.02,
   	"travel": 0.03,
-    "Amazon": 0.01,
+    "amazon": 0.01,
   	"other": 0.01
   }
 }
@@ -278,7 +278,7 @@
   	"groceries": 0.01,
   	"restaurants": 0.02,
   	"travel": 0.02,
-    "Amazon": 0.01,
+    "amazon": 0.01,
   	"other": 0.01
   }
 }
@@ -289,7 +289,7 @@
   	"groceries": 0.01,
   	"restaurants": 0.03,
   	"travel": 0.03,
-    "Amazon": 0.01,
+    "amazon": 0.01,
   	"other": 0.01
   }
 }
