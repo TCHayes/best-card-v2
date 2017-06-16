@@ -53,17 +53,17 @@ export default (state=initialState, action) => {
     return {...state, showInfoModal: !state.showInfoModal};
   }
   if (action.type === actions.ADD_USER_CARDS_SUCCESS) {
-    console.log("Hello from ADD_USER_CARDS_SUCCESS reducer");
+    //console.log("Hello from ADD_USER_CARDS_SUCCESS reducer");
     return state;
   }
   if (action.type === actions.PASS_RESET_REQ_SUCCESS) {
-    console.log("Hello from PASS_RESET_REQ_SUCCESS reducer");
-    console.log(action);
+    // console.log("Hello from PASS_RESET_REQ_SUCCESS reducer");
+    // console.log(action);
     return state;
   }
   if (action.type === actions.RESET_PASS_SUCCESS) {
-    console.log("Hello from RESET_PASS_SUCCESS reducer");
-    console.log(action);
+    // console.log("Hello from RESET_PASS_SUCCESS reducer");
+    // console.log(action);
     return state;
   }
   return state;
