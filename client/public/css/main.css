@@ -192,6 +192,15 @@ label {
   padding: 10px;
 }
 
+.card-img-container {
+  width: 289px;
+  margin: 0 auto 0 auto;
+}
+
+.card-img {
+  width: 100%;
+}
+
 .card-toggled {
   background-color: #005f83;
   border-color: #b3ffa8;
