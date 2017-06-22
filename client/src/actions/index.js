@@ -7,7 +7,12 @@ export const logout = () => ({
 
 export const TOGGLE_INFO_MODAL = 'TOGGLE_INFO_MODAL';
 export const toggleInfoModal = () => ({
-    type: TOGGLE_INFO_MODAL,
+  type: TOGGLE_INFO_MODAL,
+});
+
+export const TURN_INFO_MODAL_OFF = 'TURN_INFO_MODAL_OFF';
+export const turnInfoModalOff = () => ({
+  type: TURN_INFO_MODAL_OFF,
 });
 
 export const TOGGLE_CARD = 'TOGGLE_CARD';

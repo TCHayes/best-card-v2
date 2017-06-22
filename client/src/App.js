@@ -23,6 +23,10 @@ class App extends Component {
     this.props.dispatch(actions.toggleInfoModal());
   }
 
+  turnOffInfo() {
+    this.props.dispatch(actions.turnInfoModalOff());
+  }
+
   edit() {
     browserHistory.push('/allCards');
   }
@@ -42,7 +46,7 @@ class App extends Component {
       <div className="app">
         <div className="app-header">
           <div className='app-header-content'>
-            <Link to="/" ><h2 className='app-title'>BestCard</h2></Link>
+            <Link to="/" onClick={this.turnOffInfo}><h2 className='app-title'>BestCard</h2></Link>
             {navIcons}
           </div>
         </div>

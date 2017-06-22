@@ -52,6 +52,9 @@ export default (state=initialState, action) => {
   if (action.type === actions.TOGGLE_INFO_MODAL) {
     return {...state, showInfoModal: !state.showInfoModal};
   }
+  if (action.type === actions.TURN_INFO_MODAL_OFF) {
+    return {...state, showInfoModal: false};
+  }
   if (action.type === actions.ADD_USER_CARDS_SUCCESS) {
     //console.log("Hello from ADD_USER_CARDS_SUCCESS reducer");
     return state;
