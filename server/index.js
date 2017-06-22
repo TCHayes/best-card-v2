@@ -80,7 +80,7 @@ app.post('/api/users', (req, res) => {
 
   let { email, password } = req.body;
 
-  email = email.trim();
+  email = email.trim().toLowerCase();
   password = password.trim();
 
   if (!(password)) {
