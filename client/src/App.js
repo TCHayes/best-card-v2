@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   logout(){
+    this.props.dispatch(actions.turnInfoModalOff());
     this.props.dispatch(actions.logout());
   }
 
@@ -28,6 +29,7 @@ class App extends Component {
   }
 
   edit() {
+    this.turnOffInfo();
     browserHistory.push('/allCards');
   }
 

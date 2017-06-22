@@ -39,10 +39,8 @@ export class CardChooser extends React.Component {
                                                           index={index}/>)
     return (
       <div className='card-chooser-page'>
-        <div className='back'>
-          <i className="fa fa-chevron-circle-left" aria-hidden="true" onClick={browserHistory.goBack}></i>
-        </div>
-        <h3 className='info-text'>Please Select Your Cards</h3>
+        <h3 className='info-text'>Please Select Your Cards <br />
+        and press submit</h3>
         <div className='card-chooser-container'>
           {cards}
         </div>

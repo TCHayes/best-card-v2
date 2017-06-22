@@ -77,6 +77,5 @@
 @media screen and (min-width: 420px) {
   .modal-body {
     max-width: 400px;
-    text-align: left;
   }
 }

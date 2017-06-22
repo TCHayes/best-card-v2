@@ -1,17 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-/*
-Color palette #03 from: https://designschool.canva.com/blog/brand-color-palette/
-EDFAFD
-AED9DA
-3DDAD7
-2A93D5
-135589
-*/
-
 body {
-  /*background: linear-gradient(130deg, #1aa9e2 0%, #103359 100%, #303030 90%);
-  color: white;*/
   background-color: #fafafa;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -70,9 +59,21 @@ body {
 
 .back {
   text-align: left;
-  margin: 10px auto;
+  margin: 5px;
   max-width: 450px;
   font-size: 34px;
+  color: #005f83;
+}
+
+.faq {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+  text-align: left;
+}
+
+.faq-header {
+  text-align: center;
 }
 
 .login-page {
@@ -243,6 +244,10 @@ label {
 
 /*This styling below applies only to screens with more than 400px:*/
 @media screen and (min-width: 420px) {
+
+  .faq {
+    max-width: 400px;
+  }
 
   .form {
     position: relative;
