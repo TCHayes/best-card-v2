@@ -242,6 +242,42 @@ label {
   color: #135589;
 }
 
+.cat-amazon {
+  background-image: url(/category_images/amazon.jpg);
+  background-size: 100% 100%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.cat-gas {
+  background-image: url(/category_images/gas.jpg);
+  background-size: 100% 100%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.cat-groceries {
+  background-image: url(/category_images/groceries.jpg);
+  background-size: 100%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.cat-restaurants {
+  background-image: url(/category_images/restaurants.jpg);
+  background-size: 100% 100%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.cat-travel {
+  background-image: url(/category_images/travel.png);
+  background-size: 100% 100%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.cat-other {
+  background-image: url(/category_images/other.jpg);
+  background-size: 100% 100%;
+  text-shadow: 1px 1px 1px black;
+}
+
 /*This styling below applies only to screens with more than 400px:*/
 @media screen and (min-width: 420px) {
 
@@ -271,8 +307,7 @@ label {
   }
 
   .btn{
-    width: 320px;
-    height: 90px;
+    width: 263px;
   }
 
   .btn:hover{

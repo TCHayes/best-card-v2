@@ -13,7 +13,7 @@ export class CategoryList extends React.Component {
 
   render() {
     if (!this.props.cards.length) return <div />                    //TODO This should redirect to either login or edit cards
-    const categories = Object.keys(this.props.cards[0].categories);
+    const categories = Object.keys(this.props.cards[0].categories).sort();
     return (
       <div className='CategoryList'>
         <h3>Which type of purchase are you making?</h3>
