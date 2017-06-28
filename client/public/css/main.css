@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h3, .recommended-card-screen .card-text, .faq {
+  font-family: "Open Sans", Arial;
+  color: #333333;
+}
+
 .hidden {
   display: none;
 }
