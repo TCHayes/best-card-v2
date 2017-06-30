@@ -3,7 +3,7 @@ const { SMTP_URL } = process.env;
 const nodemailer = require('nodemailer');
 
 const defaultEmailData = {
-  from: 'BestCardInfo@gmail.com',
+  from: 'Terry1707@aol.com',
   to: 'TerryCHayes@gmail.com',
 };
 
