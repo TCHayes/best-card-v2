@@ -2,10 +2,7 @@
 const { SMTP_URL } = process.env;
 const nodemailer = require('nodemailer');
 
-const defaultEmailData = {
-  from: 'BestCardInfo@gmail.com',
-  to: 'TerryCHayes@gmail.com',
-};
+const defaultEmailData = {from: 'BestCardInfo@gmail.com'};
 
 const sendEmail = (emailData, smtpUrl=SMTP_URL) => {
   const completeEmailData = Object.assign(defaultEmailData, emailData);
