@@ -12,6 +12,10 @@ h3, .recommended-card-screen .card-text, .faq {
   color: #333333;
 }
 
+button, .card {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
